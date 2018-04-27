@@ -1,0 +1,61 @@
+﻿<nav class="navbar navbar-default" id="navBar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="header-contact">
+                <span><a href="discarpe@example.com">discarpe@example.com</a></span> | <span><a href="tel:">051 9876 4321</a></span>
+            </div>
+        </div>
+        <div class="form-inline my-2 my-lg-0">
+            <div class="header-links">
+                <ul>
+                    <li>
+                        <span><i class="fas fa-home"></i></span>
+                        @Html.ActionLink("Início", "Index")
+                    </li>
+                    <li>
+                        <span><i class="fas fa-user-plus"></i></span>
+                        @Html.ActionLink("Criar cadastro", "Registrar")
+                    </li>
+                    <li>
+                        <span><i class="fas fa-sign-in-alt"></i></span>
+                        @Html.ActionLink("Entrar", "Login")
+                    </li>
+                    <li>
+                        <a href="/wishlist" class="ico-wishlist">
+                            <span><i class="fas fa-heart"></i></span>
+                            @Html.ActionLink("Lista de desejos", "Favoritos")
+                            <span class="wishlist-qty">(0)</span>
+                        </a>
+                    </li>
+                    <li id="topcartlink">
+                        <a href="/cart" class="ico-cart">
+                            <span><i class="fas fa-shopping-cart"></i></span>
+                            @Html.ActionLink("Carrinho", "Carrinho")
+                            <span class="cart-qty">(0)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <input type="text" class="search-box-text" id="small-searchterms" autocomplete="off" name="q" placeholder="Pesquisar na loja" />
+                        <button type="submit" class="search-box-button"><span class="fa fa-search"></span></button>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<br />
+<div class="row justify-content-md-center">
+    <div class="col-md-12">
+        <h1>Di Scarpe</h1>
+    </div>
+</div>
+<div class="row justify-content-md-center">
+    <div class="products-links">
+        <ul>
+            <li><a>@Html.ActionLink("Feminino", "Female", "Shoes")</a></li>
+            <li><a href="#">Masculino</a></li>
+            <li><a href="#">Infantil</a></li>
+        </ul>
+    </div>
+</div>
