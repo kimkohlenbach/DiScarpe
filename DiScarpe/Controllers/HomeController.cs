@@ -15,6 +15,13 @@ namespace DiScarpe.Controllers
             return View();
         }
 
+        // GET: Home
+        public ActionResult ListaDesejos()
+        {
+            return View();
+        }
+
+        // REGISTRAR ----------------------------------------------------------------
         public ActionResult Registrar()
         {
             return View();
@@ -32,5 +39,46 @@ namespace DiScarpe.Controllers
             }
             return View(obj);
         }
+
+        // LOGIN ----------------------------------------------------------------
+        public ActionResult Login()
+        {
+
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult Acesso(DiScarpe.Models.Usuario userModel)
+        {
+            using (DiScarpeDBEntities db = new DiScarpeDBEntities())
+            {
+                var infoUsuario = db.Usuario.Where(x => x.Email == userModel.Email && x.Senha == userModel.Senha).FirstOrDefault();
+                if (infoUsuario == null)
+                {
+                    userModel.LoginErrorMessage = "Nome ou senha incorretos.";
+                    return View("Login", userModel);
+                }
+                else
+                {
+                    Session["IdUsuario"] = infoUsuario.IdUsuario;
+                    Session["Email"] = infoUsuario.Email;
+                    Session["Nome"] = infoUsuario.Nome;
+                    return RedirectToAction("ListaDesejos", "Home");
+                }
+            }
+        }
+
+        public ActionResult LogOut()
+        {
+            int IdUsuario = (int)Session["IdUsuario"];
+            Session.Abandon();
+            return RedirectToAction("Index", "Home");
+        }
+
+
+
+
+
     }
 }

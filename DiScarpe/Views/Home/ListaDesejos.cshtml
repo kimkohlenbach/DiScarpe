@@ -1,0 +1,12 @@
+﻿@{
+    if (Session["IdUsuario"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+}
+
+<h2>Lista de Desejos</h2>
+@*<h3> Nome : @Session["userName"].ToString()</h3>*@
+<a href="@Url.Action("LogOut","Home")">Sair</a>
+
+
