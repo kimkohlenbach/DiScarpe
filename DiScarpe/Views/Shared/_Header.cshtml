@@ -34,11 +34,6 @@
                             <span class="cart-qty">(0)</span>
                         </a>
                     </li>
-                    <li>
-                        <input type="text" class="search-box-text" id="small-searchterms" autocomplete="off" name="q" placeholder="Pesquisar na loja" />
-                        <button type="submit" class="search-box-button"><span class="fa fa-search"></span></button>
-
-                    </li>
                 </ul>
             </div>
         </div>
@@ -50,12 +45,19 @@
         <h1>Di Scarpe</h1>
     </div>
 </div>
-<div class="row justify-content-md-center">
-    <div class="products-links">
-        <ul>
-            <li><a>@Html.ActionLink("Feminino", "Female", "Shoes")</a></li>
-            <li><a href="#">Masculino</a></li>
-            <li><a href="#">Infantil</a></li>
-        </ul>
+<div class="row justify-content-md-center" id="LinksProdutos">
+    <div class="col-md-8">
+        <div class="products-links">
+            <ul>
+                <li><a>@Html.ActionLink("Feminino", "Female", "Shoes")</a></li>
+                <li><a href="#">Masculino</a></li>
+                <li><a href="#">Infantil</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <input type="text" class="search-box-text" id="small-searchterms" autocomplete="off" name="q" placeholder="Pesquisar na loja" />
+        <button type="submit" class="search-box-button"><span class="fa fa-search"></span></button>
+
     </div>
 </div>

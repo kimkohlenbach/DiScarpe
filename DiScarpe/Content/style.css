@@ -1,22 +1,46 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Grand+Hotel');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
 
 body {
+}
+
+#LinksProdutos {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+    #LinksProdutos .products-links a{
+        color: black;
+
+    }
+
+    #LinksProdutos .products-links a:hover {
+        color: dimgrey;
+        text-decoration: none;
+    }
+
+.col-md-4 {
+    text-align: right;
 }
 
 h1 {
     font-family: 'Grand Hotel', cursive;
     font-size: 60px;
     text-align: center;
+    margin: 10px;
 }
 
 .navbar {
     margin-top: -50px;
     font-size: 14px;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
     .navbar a {
         color: black;
+        text-decoration: none;
     }
 
 
@@ -45,3 +69,6 @@ h1 {
         display: inline;
         margin: 20px;
     }
+
+
+

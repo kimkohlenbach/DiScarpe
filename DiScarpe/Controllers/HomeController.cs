@@ -21,6 +21,13 @@ namespace DiScarpe.Controllers
             return View();
         }
 
+        // GET: Home
+        public ActionResult Carrinho()
+        {
+            return View();
+        }
+
+
         // REGISTRAR ----------------------------------------------------------------
         public ActionResult Registrar()
         {
