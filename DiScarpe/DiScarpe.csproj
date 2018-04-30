@@ -208,7 +208,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Imagens\1.jpg" />
+    <Content Include="Imagens\Feminino\Tenis\Moleca\111\Branco\111.jpg" />
+    <Content Include="Imagens\Feminino\Tenis\Bebecê\212\Branco\212.jpg" />
+    <Content Include="Imagens\Masculino\Tenis\Polo\323\Preto\323.jpg" />
     <Content Include="Models\BaseDados.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BaseDados.Context.cs</LastGenOutput>

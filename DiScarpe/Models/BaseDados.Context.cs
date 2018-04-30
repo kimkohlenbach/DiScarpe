@@ -34,5 +34,7 @@ namespace DiScarpe.Models
         public virtual DbSet<Tamanho> Tamanho { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public object Produtos { get; internal set; }
+        public object IdProduto { get; internal set; }
+        public object IdCategoria { get; internal set; }
     }
 }

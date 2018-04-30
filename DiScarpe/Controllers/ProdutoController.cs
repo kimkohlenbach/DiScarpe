@@ -10,12 +10,14 @@ namespace DiScarpe.Controllers
     public class ProdutoController : Controller
     {
         private DiScarpeDBEntities db = new DiScarpeDBEntities();
+        
 
-
-        public ActionResult Index()
+        public ActionResult Index(string pesquisar)
         {
-            var Produto = db.Produto;
-            return View(Produto);
+            //var Produto = db.Produto;
+            return View(db.Produto.Where(x => x.Nome.Contains(pesquisar) || pesquisar == null).ToList());
+
+            //return View(Produto);
         }
 
         [HttpPost]
@@ -36,8 +38,8 @@ namespace DiScarpe.Controllers
                         orderby c.IdCategoria
                         where c.IdCategoria == 1
                         select c;
+            
             return View(model);
-           
         }
 
         public ActionResult Masculino()
@@ -47,10 +49,7 @@ namespace DiScarpe.Controllers
                         where c.IdCategoria == 2
                         select c;
             return View(model);
-
         }
-
-
 
     }
 }
