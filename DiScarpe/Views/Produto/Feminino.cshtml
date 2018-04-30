@@ -1,13 +1,12 @@
 ﻿@model IEnumerable<DiScarpe.Models.Produto>
 
+<h2>Produtos Femininos</h2>
 
-
-<h2>Produtos</h2>
 <div class="card-group">
     @foreach (var item in Model)
     {
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="~/Imagens/1.jpg"  alt="Card image cap" />
+            <img class="card-img-top" src="~/Imagens/1.jpg" alt="Card image cap" />
             <div class="card-body">
                 <h5 class="card-title">@Html.DisplayFor(modelItem => item.Marca.Marca1)</h5>
                 <p class="card-text">@Html.DisplayFor(modelItem => item.Nome)</p>
@@ -16,4 +15,4 @@
             </div>
         </div>
     }
-    </div>
+</div>

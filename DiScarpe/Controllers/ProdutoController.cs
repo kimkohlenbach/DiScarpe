@@ -30,6 +30,26 @@ namespace DiScarpe.Controllers
             return View(produtos);
         }
 
+        public ActionResult Feminino()
+        {
+            var model = from c in db.Produto
+                        orderby c.IdCategoria
+                        where c.IdCategoria == 1
+                        select c;
+            return View(model);
+           
+        }
+
+        public ActionResult Masculino()
+        {
+            var model = from c in db.Produto
+                        orderby c.IdCategoria
+                        where c.IdCategoria == 2
+                        select c;
+            return View(model);
+
+        }
+
 
 
     }

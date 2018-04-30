@@ -70,5 +70,10 @@ h1 {
         margin: 20px;
     }
 
+.card img {
+    width: 100px;
+}
 
-
+.fa-heart {
+    color: red;
+}
