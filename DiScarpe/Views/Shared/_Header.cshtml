@@ -10,27 +10,27 @@
                 <ul>
                     <li>
                         <span><i class="fas fa-home"></i></span>
-                        @Html.ActionLink("Início", "Index")
+                        @Html.ActionLink("Início", "Index", "Produto")
                     </li>
                     <li>
                         <span><i class="fas fa-user-plus"></i></span>
-                        @Html.ActionLink("Criar cadastro", "Registrar")
+                        @Html.ActionLink("Criar cadastro", "Registrar", "Home")
                     </li>
                     <li>
                         <span><i class="fas fa-sign-in-alt"></i></span>
-                        @Html.ActionLink("Entrar", "Login")
+                        @Html.ActionLink("Entrar", "Login", "Home")
                     </li>
                     <li>
                         <a href="/wishlist" class="ico-wishlist">
                             <span><i class="fas fa-heart"></i></span>
-                            @Html.ActionLink("Lista de desejos", "ListaDesejos")
+                            @Html.ActionLink("Lista de desejos", "ListaDesejos", "Home")
                             <span class="wishlist-qty">(0)</span>
                         </a>
                     </li>
                     <li id="topcartlink">
                         <a href="/cart" class="ico-cart">
                             <span><i class="fas fa-shopping-cart"></i></span>
-                            @Html.ActionLink("Carrinho", "Carrinho")
+                            @Html.ActionLink("Carrinho", "Carrinho", "Home")
                             <span class="cart-qty">(0)</span>
                         </a>
                     </li>
