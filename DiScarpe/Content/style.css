@@ -31,6 +31,23 @@ h1 {
     margin: 10px;
 }
 
+h3 {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+h4 {
+    font-size: 22px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+h5 {
+    color: black;
+}
+
 .navbar {
     margin-top: -50px;
     font-size: 14px;
@@ -86,10 +103,14 @@ h1 {
 }
 
     .card img {
-        width: 100px;
+        width: 170px;
         text-align: center;
     }
 
 .fa-heart {
     color: red;
+}
+
+#imagem {
+    width: 300px;
 }

@@ -1,0 +1,25 @@
+﻿@model DiScarpe.Models.Produto
+<hr />
+<div class="row">
+    <div class="col-md-2">
+        <p></p>
+    </div>
+    <div class="col-md-6">
+        <img id="imagem" src="@String.Format("/Imagens/{0}/{1}/{2}/{3}/{4}.jpg", @Model.Categoria.Descricao, @Model.Marca.Descricao, @Model.Estilo.Descricao, @Model.Cor.Descricao, @Model.IdProduto)" alt="Card image cap" />
+    </div>
+    <div class="col-md-4">
+        <h3>@Model.Marca.Descricao</h3>
+        <h4>@Model.Nome</h4>
+        <p>valor aqui</p>
+        <h6>Estilo</h6>
+        <p>@Model.Estilo.Descricao</p>
+        <h6>Tamanho</h6>
+        <p>@Model.Tamanho.Descricao</p>
+        <h6>Cor</h6>
+        <p>@Model.Cor.Descricao</p>
+    </div>
+</div>
+<div>
+    <hr />
+    @Html.ActionLink("Retornar", "Index")
+</div>

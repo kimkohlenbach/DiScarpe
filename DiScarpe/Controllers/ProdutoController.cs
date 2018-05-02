@@ -51,7 +51,10 @@ namespace DiScarpe.Controllers
             return View(model);
         }
 
-       
+        public ActionResult Detalhes(int produtoId)
+        {
+            return View(db.Produto.FirstOrDefault(x => x.IdProduto == produtoId));
+        }
 
     }
 }
