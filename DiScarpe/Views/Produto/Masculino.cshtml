@@ -2,13 +2,14 @@
 
 <h2>Produtos Femininos</h2>
 
+
 <div class="card-group">
     @foreach (var item in Model)
     {
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="~/Imagens/1.jpg" alt="Card image cap" />
+        <div class="card">
+            <img class="card-img-top" src="@String.Format("/Imagens/{0}/{1}/{2}/{3}/{4}.jpg", item.Categoria.Descricao, item.Marca.Descricao, item.Estilo.Descricao, item.Cor.Descricao, item.IdProduto)" alt="Card image cap" />
             <div class="card-body">
-                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Marca.Marca1)</h5>
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Marca.Descricao)</h5>
                 <p class="card-text">@Html.DisplayFor(modelItem => item.Nome)</p>
                 <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i></a>
                 <button type="button" class="btn btn-light"><i class="fas fa-heart"></i></button>

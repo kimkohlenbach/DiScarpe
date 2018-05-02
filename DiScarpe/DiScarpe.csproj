@@ -208,8 +208,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Imagens\Feminino\Florense\Bota\Preto\7.jpg" />
     <Content Include="Imagens\Feminino\Moleca\Tênis\Branco\1.jpg" />
     <Content Include="Imagens\Feminino\Bebecê\Tênis\Branco\2.jpg" />
+    <Content Include="Imagens\Feminino\Rioutlet\Bota\Marrom\6.jpg" />
     <Content Include="Imagens\Masculino\Monte Carlo Polo Club\Tênis\Preto\3.jpg" />
     <Content Include="Models\BaseDados.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
