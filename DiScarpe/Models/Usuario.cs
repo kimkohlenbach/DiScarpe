@@ -20,15 +20,12 @@ namespace DiScarpe.Models
         [DisplayName("Nome")]
         [Required(ErrorMessage = "Este campo dever ser preenchido.")]
         public string Nome { get; set; }
-
         [Required(ErrorMessage = "Este campo dever ser preenchido.")]
         public string Email { get; set; }
-
         [DisplayName("Senha")]
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "Este campo dever ser preenchido.")]
         public string Senha { get; set; }
-
         public string LoginErrorMessage { get; internal set; }
     }
 }

@@ -5,7 +5,7 @@
       <PropertyRef Name="IdCategoria" />
     </Key>
     <Property Name="IdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Categoria1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Produto" Relationship="Self.FK_Categoria" FromRole="Categoria" ToRole="Produto" />
   </EntityType>
   <EntityType Name="Cor">
@@ -13,7 +13,7 @@
       <PropertyRef Name="IdCor" />
     </Key>
     <Property Name="IdCor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Cor1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Produto" Relationship="Self.FK_Cor" FromRole="Cor" ToRole="Produto" />
   </EntityType>
   <EntityType Name="Estilo">
@@ -21,7 +21,7 @@
       <PropertyRef Name="IdEstilo" />
     </Key>
     <Property Name="IdEstilo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Estilo1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Produto" Relationship="Self.FK_Estilo" FromRole="Estilo" ToRole="Produto" />
   </EntityType>
   <EntityType Name="Marca">
@@ -29,7 +29,7 @@
       <PropertyRef Name="IdMarca" />
     </Key>
     <Property Name="IdMarca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Marca1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Produto" Relationship="Self.FK_Marca" FromRole="Marca" ToRole="Produto" />
   </EntityType>
   <EntityType Name="Produto">
@@ -64,7 +64,7 @@
       <PropertyRef Name="IdTamanho" />
     </Key>
     <Property Name="IdTamanho" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Tamanho1" Type="Int32" Nullable="false" />
+    <Property Name="Descricao" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Produto" Relationship="Self.FK_Tamanho" FromRole="Tamanho" ToRole="Produto" />
   </EntityType>
   <EntityType Name="Usuario">

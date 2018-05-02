@@ -5,7 +5,7 @@
       <EntityTypeMapping TypeName="DiScarpeDBModels.Categoria">
         <MappingFragment StoreEntitySet="Categoria">
           <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
-          <ScalarProperty Name="Categoria1" ColumnName="Categoria" />
+          <ScalarProperty Name="Descricao" ColumnName="Categoria" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -13,7 +13,7 @@
       <EntityTypeMapping TypeName="DiScarpeDBModels.Cor">
         <MappingFragment StoreEntitySet="Cor">
           <ScalarProperty Name="IdCor" ColumnName="IdCor" />
-          <ScalarProperty Name="Cor1" ColumnName="Cor" />
+          <ScalarProperty Name="Descricao" ColumnName="Cor" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -21,7 +21,7 @@
       <EntityTypeMapping TypeName="DiScarpeDBModels.Estilo">
         <MappingFragment StoreEntitySet="Estilo">
           <ScalarProperty Name="IdEstilo" ColumnName="IdEstilo" />
-          <ScalarProperty Name="Estilo1" ColumnName="Estilo" />
+          <ScalarProperty Name="Descricao" ColumnName="Estilo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -29,7 +29,7 @@
       <EntityTypeMapping TypeName="DiScarpeDBModels.Marca">
         <MappingFragment StoreEntitySet="Marca">
           <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
-          <ScalarProperty Name="Marca1" ColumnName="Marca" />
+          <ScalarProperty Name="Descricao" ColumnName="Marca" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -61,7 +61,7 @@
       <EntityTypeMapping TypeName="DiScarpeDBModels.Tamanho">
         <MappingFragment StoreEntitySet="Tamanho">
           <ScalarProperty Name="IdTamanho" ColumnName="IdTamanho" />
-          <ScalarProperty Name="Tamanho1" ColumnName="Tamanho" />
+          <ScalarProperty Name="Descricao" ColumnName="Tamanho" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

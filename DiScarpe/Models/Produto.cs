@@ -11,8 +11,7 @@ namespace DiScarpe.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Text;
-
+    
     public partial class Produto
     {
         public int IdProduto { get; set; }
@@ -22,12 +21,11 @@ namespace DiScarpe.Models
         public int IdMarca { get; set; }
         public int IdEstilo { get; set; }
         public Nullable<int> IdTamanho { get; set; }
-
+    
         public virtual Categoria Categoria { get; set; }
         public virtual Cor Cor { get; set; }
         public virtual Estilo Estilo { get; set; }
         public virtual Marca Marca { get; set; }
         public virtual Tamanho Tamanho { get; set; }
-
     }
 }

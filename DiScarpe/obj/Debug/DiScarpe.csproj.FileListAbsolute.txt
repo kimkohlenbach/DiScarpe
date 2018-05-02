@@ -66,6 +66,5 @@ E:\Projetos\VS\DiScarpe\DiScarpe\bin\Microsoft.AI.DependencyCollector.xml
 E:\Projetos\VS\DiScarpe\DiScarpe\bin\Microsoft.AI.ServerTelemetryChannel.xml
 E:\Projetos\VS\DiScarpe\DiScarpe\bin\Microsoft.AI.WindowsServer.xml
 E:\Projetos\VS\DiScarpe\DiScarpe\bin\Microsoft.AI.Web.xml
-E:\Projetos\VS\DiScarpe\DiScarpe\obj\Debug\DiScarpe.csprojResolveAssemblyReference.cache
 E:\Projetos\VS\DiScarpe\DiScarpe\obj\Debug\DiScarpe.dll
 E:\Projetos\VS\DiScarpe\DiScarpe\obj\Debug\DiScarpe.pdb
