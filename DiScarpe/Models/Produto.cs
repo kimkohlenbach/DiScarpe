@@ -20,7 +20,9 @@ namespace DiScarpe.Models
         public int IdCor { get; set; }
         public int IdMarca { get; set; }
         public int IdEstilo { get; set; }
-        public Nullable<int> IdTamanho { get; set; }
+        public int IdTamanho { get; set; }
+        public string Descricao { get; set; }
+        public decimal Preco { get; set; }
     
         public virtual Categoria Categoria { get; set; }
         public virtual Cor Cor { get; set; }

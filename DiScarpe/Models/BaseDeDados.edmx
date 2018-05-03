@@ -10,28 +10,28 @@
             <PropertyRef Name="IdCategoria" />
           </Key>
           <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Categoria" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="Cor">
           <Key>
             <PropertyRef Name="IdCor" />
           </Key>
           <Property Name="IdCor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Cor" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="Estilo">
           <Key>
             <PropertyRef Name="IdEstilo" />
           </Key>
           <Property Name="IdEstilo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Estilo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="Marca">
           <Key>
             <PropertyRef Name="IdMarca" />
           </Key>
           <Property Name="IdMarca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Marca" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="Produto">
           <Key>
@@ -43,7 +43,9 @@
           <Property Name="IdCor" Type="int" Nullable="false" />
           <Property Name="IdMarca" Type="int" Nullable="false" />
           <Property Name="IdEstilo" Type="int" Nullable="false" />
-          <Property Name="IdTamanho" Type="int" />
+          <Property Name="IdTamanho" Type="int" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="300" />
+          <Property Name="Preco" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -60,7 +62,7 @@
             <PropertyRef Name="IdTamanho" />
           </Key>
           <Property Name="IdTamanho" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Tamanho" Type="int" Nullable="false" />
+          <Property Name="Descricao" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -70,6 +72,7 @@
           <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="Senha" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="Adminisrador" Type="bit" Nullable="false" />
         </EntityType>
         <Association Name="FK_Categoria">
           <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
@@ -120,7 +123,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tamanho">
-          <End Role="Tamanho" Type="Self.Tamanho" Multiplicity="0..1" />
+          <End Role="Tamanho" Type="Self.Tamanho" Multiplicity="1" />
           <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tamanho">
@@ -208,7 +211,9 @@
           <Property Name="IdCor" Type="Int32" Nullable="false" />
           <Property Name="IdMarca" Type="Int32" Nullable="false" />
           <Property Name="IdEstilo" Type="Int32" Nullable="false" />
-          <Property Name="IdTamanho" Type="Int32" />
+          <Property Name="IdTamanho" Type="Int32" Nullable="false" />
+          <Property Name="Descricao" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Preco" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <NavigationProperty Name="Categoria" Relationship="Self.FK_Categoria" FromRole="Produto" ToRole="Categoria" />
           <NavigationProperty Name="Cor" Relationship="Self.FK_Cor" FromRole="Produto" ToRole="Cor" />
           <NavigationProperty Name="Estilo" Relationship="Self.FK_Estilo" FromRole="Produto" ToRole="Estilo" />
@@ -241,6 +246,7 @@
           <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Senha" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adminisrador" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="FK_Categoria">
           <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
@@ -291,7 +297,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tamanho">
-          <End Role="Tamanho" Type="Self.Tamanho" Multiplicity="0..1" />
+          <End Role="Tamanho" Type="Self.Tamanho" Multiplicity="1" />
           <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tamanho">
@@ -342,7 +348,7 @@
             <EntityTypeMapping TypeName="DiScarpeDBModels.Categoria">
               <MappingFragment StoreEntitySet="Categoria">
                 <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
-                <ScalarProperty Name="Descricao" ColumnName="Categoria" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -350,7 +356,7 @@
             <EntityTypeMapping TypeName="DiScarpeDBModels.Cor">
               <MappingFragment StoreEntitySet="Cor">
                 <ScalarProperty Name="IdCor" ColumnName="IdCor" />
-                <ScalarProperty Name="Descricao" ColumnName="Cor" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -358,7 +364,7 @@
             <EntityTypeMapping TypeName="DiScarpeDBModels.Estilo">
               <MappingFragment StoreEntitySet="Estilo">
                 <ScalarProperty Name="IdEstilo" ColumnName="IdEstilo" />
-                <ScalarProperty Name="Descricao" ColumnName="Estilo" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -366,7 +372,7 @@
             <EntityTypeMapping TypeName="DiScarpeDBModels.Marca">
               <MappingFragment StoreEntitySet="Marca">
                 <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
-                <ScalarProperty Name="Descricao" ColumnName="Marca" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -380,6 +386,8 @@
                 <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
                 <ScalarProperty Name="IdEstilo" ColumnName="IdEstilo" />
                 <ScalarProperty Name="IdTamanho" ColumnName="IdTamanho" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Preco" ColumnName="Preco" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -398,7 +406,7 @@
             <EntityTypeMapping TypeName="DiScarpeDBModels.Tamanho">
               <MappingFragment StoreEntitySet="Tamanho">
                 <ScalarProperty Name="IdTamanho" ColumnName="IdTamanho" />
-                <ScalarProperty Name="Descricao" ColumnName="Tamanho" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -409,6 +417,7 @@
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="Adminisrador" ColumnName="Adminisrador" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

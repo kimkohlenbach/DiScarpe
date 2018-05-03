@@ -27,5 +27,6 @@ namespace DiScarpe.Models
         [Required(ErrorMessage = "Este campo dever ser preenchido.")]
         public string Senha { get; set; }
         public string LoginErrorMessage { get; internal set; }
+        public bool Adminisrador { get; set; }
     }
 }

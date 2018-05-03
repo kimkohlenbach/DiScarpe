@@ -151,49 +151,50 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CadastroProdutoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseDados.Context.cs">
+    <Compile Include="Models\BaseDeDados.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDados.Context.tt</DependentUpon>
+      <DependentUpon>BaseDeDados.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseDados.cs">
+    <Compile Include="Models\BaseDeDados.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDados.tt</DependentUpon>
+      <DependentUpon>BaseDeDados.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BaseDados.Designer.cs">
+    <Compile Include="Models\BaseDeDados.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDados.edmx</DependentUpon>
+      <DependentUpon>BaseDeDados.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Categoria.cs">
-      <DependentUpon>BaseDados.tt</DependentUpon>
+      <DependentUpon>BaseDeDados.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Cor.cs">
-      <DependentUpon>BaseDados.tt</DependentUpon>
+      <DependentUpon>BaseDeDados.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Estilo.cs">
-      <DependentUpon>BaseDados.tt</DependentUpon>
+      <DependentUpon>BaseDeDados.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Marca.cs">
-      <DependentUpon>BaseDados.tt</DependentUpon>
+      <DependentUpon>BaseDeDados.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Produto.cs">
-      <DependentUpon>BaseDados.tt</DependentUpon>
+      <DependentUpon>BaseDeDados.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>BaseDados.tt</DependentUpon>
+      <DependentUpon>BaseDeDados.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tamanho.cs">
-      <DependentUpon>BaseDados.tt</DependentUpon>
+      <DependentUpon>BaseDeDados.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Usuario.cs">
-      <DependentUpon>BaseDados.tt</DependentUpon>
+      <DependentUpon>BaseDeDados.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -208,30 +209,25 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Imagens\Feminino\Florense\Bota\Preto\7.jpg" />
+    <Content Include="Imagens\Feminino\Florense\Bota\Preto\3.jpg" />
     <Content Include="Imagens\Feminino\Moleca\Tênis\Branco\1.jpg" />
     <Content Include="Imagens\Feminino\Bebecê\Tênis\Branco\2.jpg" />
-    <Content Include="Imagens\Feminino\Rioutlet\Bota\Marrom\6.jpg" />
-    <Content Include="Imagens\Masculino\Monte Carlo Polo Club\Tênis\Preto\3.jpg" />
-    <Content Include="Models\BaseDados.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseDados.Context.cs</LastGenOutput>
-      <DependentUpon>BaseDados.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\BaseDados.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BaseDados.edmx</DependentUpon>
-      <LastGenOutput>BaseDados.cs</LastGenOutput>
-    </Content>
+    <Content Include="Imagens\Feminino\Rioutlet\Bota\Marrom\4.jpg" />
+    <Content Include="Imagens\Masculino\Monte Carlo Polo Club\Tênis\Preto\5.jpg" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\BaseDados.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BaseDados.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\BaseDados.edmx.diagram">
-      <DependentUpon>BaseDados.edmx</DependentUpon>
+    <Content Include="Imagens\Masculino\Ride Skateboard\Bota\Azul-Marinho\7.jpg" />
+    <Content Include="Imagens\Masculino\Ride Skateboard\Tênis\Preto\6.jpg" />
+    <Content Include="Models\BaseDeDados.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaseDeDados.edmx</DependentUpon>
+      <LastGenOutput>BaseDeDados.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BaseDeDados.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaseDeDados.edmx</DependentUpon>
+      <LastGenOutput>BaseDeDados.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -255,6 +251,13 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="Models\BaseDeDados.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BaseDeDados.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BaseDeDados.edmx.diagram">
+      <DependentUpon>BaseDeDados.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -309,6 +312,8 @@
     <Content Include="Views\Produto\Feminino.cshtml" />
     <Content Include="Views\Produto\Masculino.cshtml" />
     <Content Include="Views\Produto\Detalhes.cshtml" />
+    <Content Include="Views\CadastroProduto\AddMercadoria.cshtml" />
+    <Content Include="Views\CadastroProduto\loginInterno.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

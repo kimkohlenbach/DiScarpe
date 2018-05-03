@@ -10,13 +10,15 @@
     <div class="col-md-4">
         <h3>@Model.Marca.Descricao</h3>
         <h4>@Model.Nome</h4>
-        <p>valor aqui</p>
+        <p>R$ @Convert.ToDecimal(@Model.Preco)</p>
         <h6>Estilo</h6>
         <p>@Model.Estilo.Descricao</p>
         <h6>Tamanho</h6>
         <p>@Model.Tamanho.Descricao</p>
         <h6>Cor</h6>
         <p>@Model.Cor.Descricao</p>
+        <h6>Descrição do produto</h6>
+        <p>@Model.Descricao</p>
     </div>
 </div>
 <div>
