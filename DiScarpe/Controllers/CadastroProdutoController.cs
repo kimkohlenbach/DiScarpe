@@ -9,6 +9,10 @@ namespace DiScarpe.Controllers
 {
     public class CadastroProdutoController : Controller
     {
+        public ActionResult loginInterno()
+        {
+            return View();
+        }
         // GET: CadastroProduto
         public ActionResult AddMercadoria()
         {
