@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e23e689cd0c84ba4a1afd8d8962e813c" Name="Diagram1">
+      <Diagram DiagramId="efa2debb0a8d4a59ab8cedc89267fe1a" Name="Diagram1">
         <EntityTypeShape EntityType="DiScarpeDBModels.Categoria" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DiScarpeDBModels.Cor" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DiScarpeDBModels.Estilo" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />

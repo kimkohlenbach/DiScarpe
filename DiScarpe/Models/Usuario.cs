@@ -30,3 +30,5 @@ namespace DiScarpe.Models
         public bool Adminisrador { get; set; }
     }
 }
+
+
