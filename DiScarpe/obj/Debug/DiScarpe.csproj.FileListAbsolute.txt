@@ -141,3 +141,4 @@ D:\Projects DigitalDesk\Activities\Projeto DiScarpe\DiScarpe\DiScarpe\bin\Micros
 D:\Projects DigitalDesk\Activities\Projeto DiScarpe\DiScarpe\DiScarpe\obj\Debug\DiScarpe.csproj.CopyComplete
 D:\Projects DigitalDesk\Activities\Projeto DiScarpe\DiScarpe\DiScarpe\obj\Debug\DiScarpe.dll
 D:\Projects DigitalDesk\Activities\Projeto DiScarpe\DiScarpe\DiScarpe\obj\Debug\DiScarpe.pdb
+D:\Projects DigitalDesk\Activities\Projeto DiScarpe\DiScarpe\DiScarpe\obj\Debug\DiScarpe.csprojResolveAssemblyReference.cache

@@ -15,9 +15,9 @@ namespace DiScarpe.Controllers
         public ActionResult Index(string pesquisar)
         {
             //var Produto = db.Produto;
-            return View(db.Produto.Where(x => x.Nome.Contains(pesquisar) || pesquisar == null).ToList());
-
             //return View(Produto);
+
+            return View(db.Produto.Where(x => x.Nome.Contains(pesquisar) || pesquisar == null).ToList());   
         }
 
         [HttpPost]
