@@ -10,18 +10,32 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-    #LinksProdutos .products-links a{
+    #LinksProdutos .products-links a {
         color: black;
-
     }
 
-    #LinksProdutos .products-links a:hover {
-        color: dimgrey;
-        text-decoration: none;
-    }
+        #LinksProdutos .products-links a:hover {
+            color: dimgrey;
+            text-decoration: none;
+        }
 
-.col-md-4 {
+.row .col-md-4 {
     text-align: right;
+}
+
+.row .col-md-6 {
+    width: 50%;
+}
+
+
+.row .col-md-6 .detalhes {
+    color: dimgrey;
+    font-size: 22px;
+}
+
+.row .col-md-6 .btn {
+    text-transform: uppercase;
+    width: 50%;
 }
 
 h1 {
@@ -48,13 +62,17 @@ h5 {
     color: black;
 }
 
+h6 {
+    font-weight: bold;
+}
+
 .navbar {
     margin-top: -50px;
     font-size: 14px;
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    background-color: 
+    background-color:
 }
 
     .navbar a {
