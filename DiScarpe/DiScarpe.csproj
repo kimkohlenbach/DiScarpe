@@ -313,7 +313,7 @@
     <Content Include="Views\Produto\Masculino.cshtml" />
     <Content Include="Views\Produto\Detalhes.cshtml" />
     <Content Include="Views\Produto\Adicionar.cshtml" />
-    <None Include="Views\Home\LoginAdministrador" />
+    <Content Include="Views\Home\LoginAdministrador.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
