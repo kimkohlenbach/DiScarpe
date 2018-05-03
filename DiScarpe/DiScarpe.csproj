@@ -151,7 +151,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CadastroProdutoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Global.asax.cs">
@@ -312,8 +311,8 @@
     <Content Include="Views\Produto\Feminino.cshtml" />
     <Content Include="Views\Produto\Masculino.cshtml" />
     <Content Include="Views\Produto\Detalhes.cshtml" />
-    <Content Include="Views\CadastroProduto\AddMercadoria.cshtml" />
-    <Content Include="Views\CadastroProduto\loginInterno.cshtml" />
+    <Content Include="Views\Produto\Adicionar.cshtml" />
+    <None Include="Views\Home\LoginAdministrador" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
