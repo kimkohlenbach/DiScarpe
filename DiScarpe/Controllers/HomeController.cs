@@ -83,11 +83,11 @@ namespace DiScarpe.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public ActionResult LoginAdministrador()
+        {
 
-
-
-
-
-
+            return View();
+        }
+        
     }
 }
