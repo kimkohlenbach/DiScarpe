@@ -88,6 +88,14 @@ namespace DiScarpe.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult AcessoAdmin(DiScarpe.Models.Usuario u)
+        {
+            DiScarpeDBEntities db =new DiScarpeDBEntities();
+            
+            return View();
+        }
         
     }
 }
