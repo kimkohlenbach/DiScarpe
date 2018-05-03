@@ -8,8 +8,3 @@
 
 <h2>Lista de Desejos</h2>
 <a href="@Url.Action("LogOut","Home")">Sair</a>
-
-@foreach (var usuario in Model)
-{
-    <p class="card-text">@Html.DisplayFor(modelItem => usuario.Nome)</p>
-}
