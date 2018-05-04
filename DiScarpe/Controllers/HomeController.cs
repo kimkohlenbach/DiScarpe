@@ -93,8 +93,16 @@ namespace DiScarpe.Controllers
         public ActionResult AcessoAdmin(DiScarpe.Models.Usuario u)
         {
             DiScarpeDBEntities db =new DiScarpeDBEntities();
-            
-            return View();
+            var infoUsuario = db.Usuario.Where(x =>x.Email==u.Email&&x.Senha==u.Senha && x.Adminisrador==true).FirstOrDefault();
+            if (infoUsuario == null)
+            {
+                return Content("Não encontrado");
+            }
+            else
+            {
+                return View();
+            }
+           
         }
         
     }
