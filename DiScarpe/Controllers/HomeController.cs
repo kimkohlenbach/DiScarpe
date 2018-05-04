@@ -54,24 +54,31 @@ namespace DiScarpe.Controllers
             return View();
         }
 
-
         [HttpPost]
-        public ActionResult Acesso(DiScarpe.Models.Usuario userModel)
+        public ActionResult Acesso(DiScarpe.Models.Usuario Usuario)
         {
             using (DiScarpeDBEntities db = new DiScarpeDBEntities())
             {
-                var infoUsuario = db.Usuario.Where(x => x.Email == userModel.Email && x.Senha == userModel.Senha).FirstOrDefault();
-                if (infoUsuario == null)
+
+                var info= db.Usuario.Where(x => x.Email == Usuario.Email && x.Senha == Usuario.Senha).FirstOrDefault();
+                if (info == null)
                 {
-                    userModel.LoginErrorMessage = "Nome ou senha incorretos.";
-                    return View("Login", userModel);
+                    Usuario.LoginErrorMessage = "Nome ou senha incorretos.";
+                    return View("Login", Usuario);
                 }
                 else
                 {
-                    Session["IdUsuario"] = infoUsuario.IdUsuario;
-                    Session["Email"] = infoUsuario.Email;
-                    Session["Nome"] = infoUsuario.Nome;
-                    return RedirectToAction("ListaDesejos", "Home");
+                    if (info.Adminisrador)
+                    {
+                        return RedirectToAction("Adicionar", "Produto");
+                    }
+                    else {
+                        Session["IdUsuario"] = Usuario.IdUsuario;
+                        Session["Email"] = Usuario.Email;
+                        Session["Nome"] = Usuario.Nome;
+                        return RedirectToAction("ListaDesejos", "Home");
+                    }
+                        
                 }
             }
         }
@@ -81,28 +88,6 @@ namespace DiScarpe.Controllers
             int IdUsuario = (int)Session["IdUsuario"];
             Session.Abandon();
             return RedirectToAction("Index", "Home");
-        }
-
-        public ActionResult LoginAdministrador()
-        {
-
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult AcessoAdmin(DiScarpe.Models.Usuario u)
-        {
-            DiScarpeDBEntities db =new DiScarpeDBEntities();
-            var infoUsuario = db.Usuario.Where(x =>x.Email==u.Email&&x.Senha==u.Senha && x.Adminisrador==true).FirstOrDefault();
-            if (infoUsuario == null)
-            {
-                return Content("Não encontrado");
-            }
-            else
-            {
-                return View();
-            }
-           
         }
         
     }
