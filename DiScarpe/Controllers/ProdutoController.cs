@@ -132,5 +132,68 @@ namespace DiScarpe.Controllers
             db.SaveChanges();
             return Content("alert('Inserido com  sucesso')");
         }
+        public ActionResult AdicionarMarca()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AdicionarMarca(Marca marca)
+        {
+
+            DiScarpeDBEntities db = new DiScarpeDBEntities();
+            db.Marca.Add(marca);
+            db.SaveChanges();
+            ViewBag.mensagem = "Acesso Negado";
+            return RedirectToAction("Adicionar", "Produto");
+        }
+
+        public ActionResult AdicionarCor()
+        {
+           
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AdicionarCor(Cor cor)
+        {
+         
+            DiScarpeDBEntities db = new DiScarpeDBEntities();
+            db.Cor.Add(cor);
+            db.SaveChanges();
+            ViewBag.mensagem = "Acesso Negado";
+            return RedirectToAction("Adicionar", "Produto");
+        }
+
+        public ActionResult AdicionarEstilo()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AdicionarEstilo(Estilo estilo)
+        {
+
+            DiScarpeDBEntities db = new DiScarpeDBEntities();
+            db.Estilo.Add(estilo);
+            db.SaveChanges();
+            ViewBag.mensagem = "Acesso Negado";
+            return RedirectToAction("Adicionar", "Produto");
+        }
+        public ActionResult AdicionarTamanho()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AdicionarTamanho(Tamanho tamanho)
+        {
+
+            DiScarpeDBEntities db = new DiScarpeDBEntities();
+            db.Tamanho.Add(tamanho);
+            db.SaveChanges();
+            ViewBag.mensagem = "Acesso Negado";
+            return RedirectToAction("Adicionar", "Produto");
+        }
     }
 }
