@@ -195,5 +195,23 @@ namespace DiScarpe.Controllers
             ViewBag.mensagem = "Acesso Negado";
             return RedirectToAction("Adicionar", "Produto");
         }
+
+        public ActionResult NovoProduto()
+        {
+            DiScarpeDBEntities db = new DiScarpeDBEntities();
+            var Categoria = db.Categoria;
+            List<SelectListItem> cat = new List<SelectListItem>();
+            cat.Add(new SelectListItem { });
+            foreach (var i in Categoria)
+            {
+                cat.Add(new SelectListItem
+                {
+                    Text = i.Descricao,
+                    Value = i.IdCategoria.ToString()
+                });
+            }
+            ViewBag.cat = cat;
+            return View();
+        }
     }
 }
