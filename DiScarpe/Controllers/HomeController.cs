@@ -102,14 +102,16 @@ namespace DiScarpe.Controllers
                 {
                     if (info.Adminisrador)
                     {
-                        return RedirectToAction("Adicionar", "Produto");
+                      return RedirectToAction("Adicionar", "Produto");
+                      
                     }
                     else
                     {
-                        Session["IdUsuario"] = Usuario.IdUsuario;
-                        Session["Email"] = Usuario.Email;
-                        Session["Nome"] = Usuario.Nome;
+                        Session["IdUsuario"] = info.IdUsuario;
+                        Session["Email"] = info.Email;
+                        Session["Nome"] = info.Nome;
                         return RedirectToAction("ListaDesejos", "Home");
+                       
                     }
 
                 }
