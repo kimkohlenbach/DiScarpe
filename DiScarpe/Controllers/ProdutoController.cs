@@ -12,44 +12,44 @@ namespace DiScarpe.Controllers
         private DiScarpeDBEntities db = new DiScarpeDBEntities();
         
 
-        public ActionResult Index(string pesquisar)
-        {
-            //var Produto = db.Produto;
-            //return View(Produto);
+        //public ActionResult Index(string pesquisar)
+        //{
+        //    //var Produto = db.Produto;
+        //    //return View(Produto);
 
-            return View(db.Produto.Where(x => x.Nome.Contains(pesquisar) || pesquisar == null).ToList());   
-        }
+        //    return View(db.Produto.Where(x => x.Nome.Contains(pesquisar) || pesquisar == null).ToList());   
+        //}
 
-        [HttpPost]
-        public ActionResult Index(DiScarpe.Models.Produto produtos)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Produto.Add(produtos);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(produtos);
-        }
+        //[HttpPost]
+        //public ActionResult Index(DiScarpe.Models.Produto produtos)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Produto.Add(produtos);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(produtos);
+        //}
 
-        public ActionResult Feminino()
-        {
-            var model = from c in db.Produto
-                        orderby c.IdCategoria
-                        where c.IdCategoria == 1
-                        select c;
+        //public ActionResult Feminino()
+        //{
+        //    var model = from c in db.Produto
+        //                orderby c.IdCategoria
+        //                where c.IdCategoria == 1
+        //                select c;
             
-            return View(model);
-        }
+        //    return View(model);
+        //}
 
-        public ActionResult Masculino()
-        {
-            var model = from c in db.Produto
-                        orderby c.IdCategoria
-                        where c.IdCategoria == 2
-                        select c;
-            return View(model);
-        }
+        //public ActionResult Masculino()
+        //{
+        //    var model = from c in db.Produto
+        //                orderby c.IdCategoria
+        //                where c.IdCategoria == 2
+        //                select c;
+        //    return View(model);
+        //}
 
         public ActionResult Detalhes(int produtoId)
         {

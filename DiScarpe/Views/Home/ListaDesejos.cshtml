@@ -1,4 +1,5 @@
-﻿@{
+﻿@model DiScarpe.Models.Usuario
+@{
     if (Session["IdUsuario"] == null)
     {
         Response.Redirect("~/Home/Login");

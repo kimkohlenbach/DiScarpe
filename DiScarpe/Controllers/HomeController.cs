@@ -9,10 +9,43 @@ namespace DiScarpe.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
-        public ActionResult Index()
+        private DiScarpeDBEntities db = new DiScarpeDBEntities();
+
+
+        public ActionResult Index(string pesquisar)
         {
-            return View();
+            return View(db.Produto.Where(x => x.Nome.Contains(pesquisar) || pesquisar == null).ToList());
+        }
+
+        [HttpPost]
+        public ActionResult Index(DiScarpe.Models.Produto produtos)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Produto.Add(produtos);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(produtos);
+        }
+
+        public ActionResult Feminino()
+        {
+            var model = from c in db.Produto
+                        orderby c.IdCategoria
+                        where c.IdCategoria == 1
+                        select c;
+
+            return View(model);
+        }
+
+        public ActionResult Masculino()
+        {
+            var model = from c in db.Produto
+                        orderby c.IdCategoria
+                        where c.IdCategoria == 2
+                        select c;
+            return View(model);
         }
 
         // GET: Home
@@ -21,12 +54,11 @@ namespace DiScarpe.Controllers
             return View();
         }
 
-        // GET: Home
+        // CARRINHO DE COMPRAS
         public ActionResult Carrinho()
         {
             return View();
         }
-
 
         // REGISTRAR ----------------------------------------------------------------
         public ActionResult Registrar()
@@ -60,7 +92,7 @@ namespace DiScarpe.Controllers
             using (DiScarpeDBEntities db = new DiScarpeDBEntities())
             {
 
-                var info= db.Usuario.Where(x => x.Email == Usuario.Email && x.Senha == Usuario.Senha).FirstOrDefault();
+                var info = db.Usuario.Where(x => x.Email == Usuario.Email && x.Senha == Usuario.Senha).FirstOrDefault();
                 if (info == null)
                 {
                     Usuario.LoginErrorMessage = "Nome ou senha incorretos.";
@@ -72,13 +104,14 @@ namespace DiScarpe.Controllers
                     {
                         return RedirectToAction("Adicionar", "Produto");
                     }
-                    else {
+                    else
+                    {
                         Session["IdUsuario"] = Usuario.IdUsuario;
                         Session["Email"] = Usuario.Email;
                         Session["Nome"] = Usuario.Nome;
                         return RedirectToAction("ListaDesejos", "Home");
                     }
-                        
+
                 }
             }
         }
@@ -89,6 +122,6 @@ namespace DiScarpe.Controllers
             Session.Abandon();
             return RedirectToAction("Index", "Home");
         }
-        
+
     }
 }

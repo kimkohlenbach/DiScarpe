@@ -309,10 +309,11 @@
     <Content Include="Views\Home\ListaDesejos.cshtml" />
     <Content Include="Views\Home\Carrinho.cshtml" />
     <Content Include="Views\Produto\Index.cshtml" />
-    <Content Include="Views\Produto\Feminino.cshtml" />
-    <Content Include="Views\Produto\Masculino.cshtml" />
+    <Content Include="Views\Home\Feminino.cshtml" />
+    <Content Include="Views\Home\Masculino.cshtml" />
     <Content Include="Views\Produto\Detalhes.cshtml" />
     <Content Include="Views\Produto\Adicionar.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
