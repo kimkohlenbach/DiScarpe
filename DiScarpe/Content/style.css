@@ -1,113 +1,115 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Grand+Hotel');
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,700');
 
 body {
     font-family: 'Roboto', sans-serif;
 }
 
-#LinksProdutos {
-    padding: 20px;
-    font-family: 'Roboto', sans-serif;
+.container {
+    margin-top: 150px;
 }
 
-    #LinksProdutos .products-links a {
-        color: black;
-    }
+/* ------------- NAVBAR ------------- */
 
-        #LinksProdutos .products-links a:hover {
-            color: dimgrey;
-            text-decoration: none;
-        }
-
-.row .col-md-4 {
-    text-align: right;
-}
-
-.row .col-md-6 {
-    width: 50%;
-}
-
-
-.row .col-md-6 .detalhes {
-    color: dimgrey;
-    font-size: 22px;
-}
-
-.row .col-md-6 .btn {
-    text-transform: uppercase;
-    width: 50%;
-}
-
-h1 {
-    font-family: 'Grand Hotel', cursive;
-    font-size: 60px;
-    text-align: center;
-    margin: 10px;
-}
-
-h3 {
-    color: black;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-}
-
-h4 {
-    font-size: 22px;
-    color: black;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-}
-
-h5 {
-    color: black;
-}
-
-h6 {
-    font-weight: bold;
-}
-
-.navbar {
-    margin-top: -50px;
-    font-size: 14px;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+#navbar {
     position: fixed;
-    background-color: white;
     z-index: 2;
+    background-color: #F7F7F7;
+    width: 100%;
+    margin-top: -50px;
 }
 
-    .navbar a {
-        color: black;
+#campo-login {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.nav-login {
+    color: black;
+    transition: 0.2s;
+    margin-right: 10px;
+}
+
+    .nav-login:hover {
+        color: #979797;
         text-decoration: none;
     }
 
-
-.row .products-links {
-    margin: auto;
+.nav-titulo {
+    font-family: 'grand hotel', cursive;
+    font-size: 40px;
+    color: black;
+    transition: 1s;
+    margin-left: 15px;
 }
 
-.header-links ul {
-    padding: 0px;
-    margin: 0px;
-    list-style: none;
-}
-
-    .header-links ul li {
-        display: inline;
-        margin: 20px;
+    .nav-titulo:hover {
+        color: #67f3b7;
+        text-decoration: none;
     }
 
-.products-links ul {
-    padding: 0px;
-    margin: 0px;
-    list-style: none;
+.campo-drop {
+    color: black;
+    text-transform: uppercase;
 }
 
-    .products-links ul li {
-        display: inline;
-        margin: 20px;
+#nav-pesquisa {
+    text-align: right;
+}
+
+.campo-pesquisa {
+    border: none;
+    border-bottom: 1px solid;
+    outline: 0 none;
+    background-color: #F7F7F7;
+}
+
+.search-box-button {
+    background: none;
+    border: none;
+    padding: 3px;
+}
+
+    .search-box-button:hover {
+        cursor: pointer;
     }
+
+
+.dropdown {
+    padding: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    text-transform:uppercase;
+}
+
+    .dropbtn .nav-button {
+        color: black;
+    }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    border: none;
+}
+
+
+/* ------------- CARDS ------------- */
 
 .card-group {
     display: grid;
@@ -117,20 +119,117 @@ h6 {
 }
 
 .card {
-    border: 2px solid #e7e7e7;
-    border-radius: 4px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    border: 0px solid #e7e7e7;
     padding: .5rem;
+    transition: 1s;
 }
 
-    .card img {
-        width: 170px;
-        text-align: center;
+    .card:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
-.fa-heart {
-    color: red;
+.card-image {
+    height: 250px;
 }
 
-#imagem {
-    width: 300px;
+.card img {
+    max-width: 200px;
+    margin-left: 20%;
 }
+
+.card-body {
+    text-align: center;
+}
+
+.card-title a {
+    color: black;
+    text-transform: uppercase;
+}
+
+    .card-title a:hover {
+        text-decoration: none;
+        color: black;
+    }
+
+.preco {
+    font-weight: 700;
+}
+
+
+.btn {
+    width: 100%;
+}
+
+    .btn a {
+        color: white;
+        text-transform: uppercase;
+    }
+
+        .btn a:hover {
+            text-decoration: none;
+        }
+
+/* ------------- DETALHES ------------- */
+
+.nomeMarca {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.nomeProduto {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.subtitulo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+}
+
+.gradeTamanhos {
+    font-family: 'Barlow Condensed', sans-serif;
+    list-style: none;
+}
+
+    .gradeTamanhos li {
+        display: inline;
+        padding: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        .gradeTamanhos li:hover {
+            background-color: mediumseagreen;
+            color: white;
+        }
+
+.botoes {
+    font-family: 'Barlow Condensed', sans-serif;
+    width: 200px;
+}
+
+.btn {
+    text-transform: uppercase;
+}
+
+/* ------------- LOGIN ------------- */
+
+
+
+/* ------------- RODAPÉ------------- */
+footer {
+    background-color: #EEEEEE;
+}
+
+
+
+
+#campoNovaCor {
+    display: none;
+}
+
