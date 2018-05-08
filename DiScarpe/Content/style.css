@@ -12,6 +12,12 @@ body {
     margin-top: 150px;
 }
 
+.paginaTitulo {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: black;
+    font-size: 30px;
+}
+
 /* ------------- NAVBAR ------------- */
 
 #navbar {
@@ -158,16 +164,16 @@ body {
 }
 
 
-.btn {
+#btnCard {
     width: 100%;
 }
 
-    .btn a {
+    #btnCard a {
         color: white;
         text-transform: uppercase;
     }
 
-        .btn a:hover {
+        #btnCard a:hover {
             text-decoration: none;
         }
 
@@ -219,8 +225,36 @@ body {
 
 /* ------------- LOGIN ------------- */
 
+#btnNovoCadastro a {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: white;
+    text-transform: uppercase;
+}
 
+    #btnNovoCadastro a:hover {
+        text-decoration: none;
+    }
 
+/* ------------- REGISTRAR ------------- */
+/* ------------- ADMINISTRACAO ------------- */
+#painelAdmin {
+    margin-bottom: 5px;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+#novoProduto {
+    text-align: right;
+}
+
+#btnNovoProduto a {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: white;
+    text-transform: uppercase;
+}
+
+    #btnNovoProduto a:hover {
+        text-decoration: none;
+    }
 /* ------------- RODAPÉ------------- */
 footer {
     background-color: #EEEEEE;
@@ -229,7 +263,4 @@ footer {
 
 
 
-#campoNovaCor {
-    display: none;
-}
 

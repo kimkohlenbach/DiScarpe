@@ -1,7 +1,8 @@
 ﻿@model DiScarpe.Models.Usuario
 
+<p class="paginaTitulo">Login</p>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
         @using (Html.BeginForm("Acesso", "Home", FormMethod.Post))
         {
             <div class="formulario">
@@ -21,5 +22,9 @@
                 <input type="submit" name="name" value="Entrar" class="btn btn-primary" />
             </div>
         }
+    </div>
+    <div class="col-md-6">
+        <p>Não possui uma conta? Cadastre-se agora!</p>
+        <button class="btn btn-success" id="btnNovoCadastro">@Html.ActionLink("Criar cadastro", "Registrar", "Home")</button>
     </div>
 </div>

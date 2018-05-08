@@ -319,6 +319,7 @@
     <Content Include="Views\Produto\AdicionarEstilo.cshtml" />
     <Content Include="Views\Produto\AdicionarMarca.cshtml" />
     <Content Include="Views\Produto\AdicionarTamanho.cshtml" />
+    <Content Include="Views\Home\Administracao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
