@@ -1,14 +1,16 @@
 ﻿<div id="navbar">
-    <div class="row">
-        <div class="col-md-3">
-            @Html.ActionLink("Di Scarpe", "Index", "Home", new { @class = "nav-titulo" })
+    <div class="row justify-content-between">
+        <div class="col-md-4">
+            @Html.ActionLink("DiScarpe", "Index", "Home", new { @class = "nav-titulo" })<span class="store">Store</span>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
             <div class="dropdown">
                 <button class="dropbtn">@Html.ActionLink("Feminino", "Feminino", "Home", new { @class = "nav-button" })</button>
                 <div class="dropdown-content">
                     <a href="#">Link 1</a>
+                    <hr />
                     <a href="#">Link 2</a>
+                    <hr />
                     <a href="#">Link 3</a>
                 </div>
             </div>
@@ -16,20 +18,25 @@
                 <button class="dropbtn">@Html.ActionLink("Masculino", "Masculino", "Home", new { @class = "nav-button" })</button>
                 <div class="dropdown-content">
                     <a href="#">Link 1</a>
+                    <hr />
                     <a href="#">Link 2</a>
+                    <hr />
                     <a href="#">Link 3</a>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3">
-            @using (Html.BeginForm("Index", "Home", FormMethod.Get))
-            {
-                @Html.TextBox("pesquisar", "", new { @class = "campo-pesquisa" })<button type="submit" class="search-box-button"><span class="fa fa-search"></span></button>
-            }
-        </div>
-        <div class="col-md-3">
-            @Session["Nome"]
-            @Html.ActionLink("Login", "Login", "Home", new { @class = "nav-login" })
+            <div class="dropdown">
+                @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+                {
+                    @Html.TextBox("pesquisar", "", new { @class = "campo-pesquisa" })<button type="submit" class="search-box-button"><span class="fa fa-search"></span></button>
+                }
+            </div>
+            <div class="dropdown">
+                |
+            </div>
+            <div class="dropdown">
+                @Session["Nome"]
+                @Html.ActionLink("Login", "Login", "Home", new { @class = "nav-login" })
+            </div>
         </div>
     </div>
 </div>
