@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿var cProduto = document.getElementById("cProduto");
 var dropCor = document.getElementById("dropCor");
 var dropCategoria = document.getElementById("dropCategoria");
@@ -106,3 +107,11 @@ function toCleanStorage() {
 //    guardar.setItem("Estilo", $('#dropEstilo').val());
 //    guardar.setItem("Tamanho", $('#dropTamanho').val());
 //}
+=======
+﻿$(document).ready(function () {
+    $('.nTamanho').click(function () {
+        $('.nTamanho.active').removeClass("active");
+        $(this).addClass("active");
+    });
+});
+>>>>>>> c1ceacc70ff8cc62751d952d8915726bd0c5da79

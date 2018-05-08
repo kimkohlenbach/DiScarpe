@@ -1,21 +1,30 @@
 ﻿@model DiScarpe.Models.Usuario
 
+<p class="paginaTitulo">Login</p>
+<div class="row">
+    <div class="col-md-6">
+        @using (Html.BeginForm("Acesso", "Home", FormMethod.Post))
+        {
+            <div class="formulario">
 
-@using (Html.BeginForm("Acesso", "Home", FormMethod.Post))
-{
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email)
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Senha)
+                    @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Senha)
+                </div>
+                @Html.DisplayFor(model => model.LoginErrorMessage)
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Email)
-        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessageFor(model => model.Email)
+                <input type="submit" name="name" value="Entrar" class="btn btn-primary" id="btnEntrar" />
+            </div>
+        }
     </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.Senha)
-        @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessageFor(model => model.Senha)
+    <div class="col-md-6">
+        <p>Não possui uma conta? Cadastre-se agora!</p>
+        <button class="btn btn-success" id="btnNovoCadastro">@Html.ActionLink("Criar cadastro", "Registrar", "Home")</button>
     </div>
-    @Html.DisplayFor(model => model.LoginErrorMessage)
-
-    <input type="submit" name="name" value="Login" class="btn btn-primary" />
-
-}
+</div>

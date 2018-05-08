@@ -1,26 +1,40 @@
 ﻿@model DiScarpe.Models.Produto
-<hr />
+<a href="~/"><i class="fas fa-arrow-left"></i></a>
 <div class="row">
     <div class="col-md-6">
         <img id="imagem" src="@String.Format("/Imagens/{0}/{1}/{2}/{3}/{4}.jpg", @Model.Categoria.Descricao, @Model.Marca.Descricao, @Model.Estilo.Descricao, @Model.Cor.Descricao, @Model.IdProduto)" alt="Card image cap" />
     </div>
     <div class="col-md-6">
-        <h3>@Model.Marca.Descricao</h3>
-        <h4>@Model.Nome</h4>
-        <p class="detalhes">R$ @Convert.ToDecimal(@Model.Preco)</p>
-        <button type="button" class="btn btn-success">Comprar</button>
+        <p class="nomeMarca">@Model.Marca.Descricao</p>
+        <p class="nomeProduto">@Model.Nome</p>
+        <p class="valorProduto">R$ @Convert.ToDecimal(@Model.Preco)</p>
+        <p class="subtitulo">Detalhes do produto</p>
+        <p class="descricaoProduto">@Model.Descricao</p>
+        <p class="subtitulo">Escolha o seu tamanho</p>
+        <ul class="gradeTamanhos">
+            <li class="nTamanho">34</li>
+            <li class="nTamanho">35</li>
+            <li class="nTamanho">36</li>
+            <li class="nTamanho">37</li>
+            <li class="nTamanho">38</li>
+            <li class="nTamanho">39</li>
+        </ul>
         <br />
-        <button type="button" class="btn btn-light">Adicionar a Lista de Desejos</button>
-        <div>
-            <br />
-            <h6>Detalhes do produto</h6>
-            <p>@Model.Descricao</p>
+        <div class="botoes">
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-success">Comprar</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="Adicionar a Lista de Desejos"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="Adicionar ao Carrinho de Compras"><i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
         </div>
-        
     </div>
-</div>
-<div>
-    <hr />
-    @Html.ActionLink("Retornar", "Index")
 </div>
 

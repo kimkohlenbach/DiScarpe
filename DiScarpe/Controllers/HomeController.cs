@@ -102,7 +102,7 @@ namespace DiScarpe.Controllers
                 {
                     if (info.Adminisrador)
                     {
-                      return RedirectToAction("Adicionar", "Produto");
+                      return RedirectToAction("Administracao", "Home");
                       
                     }
                     else
@@ -116,6 +116,13 @@ namespace DiScarpe.Controllers
 
                 }
             }
+        }
+
+        public ActionResult Administracao()
+        {
+
+
+                return View();
         }
 
         public ActionResult LogOut()
