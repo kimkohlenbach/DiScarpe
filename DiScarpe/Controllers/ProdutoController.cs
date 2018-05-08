@@ -10,7 +10,7 @@ namespace DiScarpe.Controllers
     public class ProdutoController : Controller
     {
         private DiScarpeDBEntities db = new DiScarpeDBEntities();
-        
+
 
         //public ActionResult Index(string pesquisar)
         //{
@@ -38,7 +38,7 @@ namespace DiScarpe.Controllers
         //                orderby c.IdCategoria
         //                where c.IdCategoria == 1
         //                select c;
-            
+
         //    return View(model);
         //}
 
@@ -63,6 +63,10 @@ namespace DiScarpe.Controllers
                 DiScarpeDBEntities db = new DiScarpeDBEntities();
                 var Categoria = db.Categoria;
                 List<SelectListItem> cat = new List<SelectListItem>();
+                cat.Add(new SelectListItem
+                {
+
+                });
                 foreach (var i in Categoria)
                 {
                     cat.Add(new SelectListItem
@@ -75,6 +79,10 @@ namespace DiScarpe.Controllers
 
                 var Color = db.Cor;
                 List<SelectListItem> color = new List<SelectListItem>();
+                color.Add(new SelectListItem
+                {
+
+                });
                 foreach (var i in Color)
                 {
                     color.Add(new SelectListItem
@@ -87,6 +95,10 @@ namespace DiScarpe.Controllers
 
                 var marca = db.Marca;
                 List<SelectListItem> listaMarca = new List<SelectListItem>();
+                listaMarca.Add(new SelectListItem
+                {
+
+                });
                 foreach (var i in marca)
                 {
                     listaMarca.Add(new SelectListItem
@@ -99,6 +111,10 @@ namespace DiScarpe.Controllers
 
                 var tamanho = db.Tamanho;
                 List<SelectListItem> listaTamanhos = new List<SelectListItem>();
+                listaTamanhos.Add(new SelectListItem
+                {
+
+                });
                 foreach (var i in tamanho)
                 {
                     listaTamanhos.Add(new SelectListItem
@@ -111,6 +127,10 @@ namespace DiScarpe.Controllers
 
                 var estilo = db.Estilo;
                 List<SelectListItem> listaEstilos = new List<SelectListItem>();
+                listaEstilos.Add(new SelectListItem
+                {
+
+                });
                 foreach (var i in estilo)
                 {
                     listaEstilos.Add(new SelectListItem
@@ -130,12 +150,13 @@ namespace DiScarpe.Controllers
             DiScarpeDBEntities db = new DiScarpeDBEntities();
             db.Produto.Add(P);
             db.SaveChanges();
-            return Content("alert('Inserido com  sucesso')");
+            ViewBag.Status = "ok";
+            return RedirectToAction("Adicionar","Produto");
         }
         public ActionResult AdicionarMarca()
         {
-
-            return View();
+           
+           return View();//retorna view velha
         }
 
         [HttpPost]
@@ -151,13 +172,13 @@ namespace DiScarpe.Controllers
 
         public ActionResult AdicionarCor()
         {
-           
+
             return View();
         }
         [HttpPost]
         public ActionResult AdicionarCor(Cor cor)
         {
-         
+
             DiScarpeDBEntities db = new DiScarpeDBEntities();
             db.Cor.Add(cor);
             db.SaveChanges();
@@ -196,22 +217,22 @@ namespace DiScarpe.Controllers
             return RedirectToAction("Adicionar", "Produto");
         }
 
-        public ActionResult NovoProduto()
+       
+
+        public ActionResult Categoria()
         {
-            DiScarpeDBEntities db = new DiScarpeDBEntities();
-            var Categoria = db.Categoria;
-            List<SelectListItem> cat = new List<SelectListItem>();
-            cat.Add(new SelectListItem { });
-            foreach (var i in Categoria)
-            {
-                cat.Add(new SelectListItem
-                {
-                    Text = i.Descricao,
-                    Value = i.IdCategoria.ToString()
-                });
-            }
-            ViewBag.cat = cat;
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Categoria(Categoria C)
+        {
+
+            DiScarpeDBEntities db = new DiScarpeDBEntities();
+            db.Categoria.Add(C);
+            db.SaveChanges();
+            ViewBag.mensagem = "Acesso Negado";
+            return RedirectToAction("Adicionar", "Produto");
         }
     }
 }

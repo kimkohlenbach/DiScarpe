@@ -3,10 +3,9 @@
     ViewBag.Title = "AddMercadoria";
 }
 
-
-
 @using (Html.BeginForm())
 {
+    HttpCookie userIdCookie = new HttpCookie("UserID");
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
@@ -16,7 +15,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", id="cProduto" } })
                 @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
 
             </div>
@@ -26,9 +25,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IdCategoria, "Categoria", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("IdCategoria", (IEnumerable<SelectListItem>)ViewBag.cat, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("IdCategoria", (IEnumerable<SelectListItem>)ViewBag.cat, htmlAttributes: new { @class = "form-control", id="dropCategoria" })
                 @Html.ValidationMessageFor(model => model.IdCategoria, "", new { @class = "text-danger" })
-                @Html.ActionLink("Adicionar", "AdicionarCategoria", "Produto")
+                @Html.ActionLink("Adicionar", "Categoria", "Produto", new { id="adCategoria"})
 
             </div>
         </div>
@@ -38,12 +37,9 @@
 
             @Html.LabelFor(model => model.IdCor, "Cor", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("IdCor", (IEnumerable<SelectListItem>)ViewBag.color, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("IdCor", (IEnumerable<SelectListItem>)ViewBag.color, htmlAttributes: new { @class = "form-control", id = "dropCor" })
                 @Html.ValidationMessageFor(model => model.IdCor, "", new { @class = "text-danger" })
-                @Html.ActionLink("Adicionar", "AdicionarCor", "Produto")
-                <div>
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Nova Cor</button>
-                </div>
+                @Html.ActionLink("Adicionar", "AdicionarCor", "Produto", new { id = "adCor" })
             </div>
         </div>
 
@@ -53,7 +49,7 @@
             <div class="col-md-10">
                 @Html.DropDownList("IdMarca", (IEnumerable<SelectListItem>)ViewBag.marca, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdMarca, "", new { @class = "text-danger" })
-                @Html.ActionLink("Adicionar", "AdicionarMarca", "Produto")
+                @Html.ActionLink("Adicionar", "AdicionarMarca", "Produto", new { id="adMarca"})
             </div>
         </div>
 
@@ -63,7 +59,7 @@
             <div class="col-md-10">
                 @Html.DropDownList("IdEstilo", (IEnumerable<SelectListItem>)ViewBag.estilo, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdEstilo, "", new { @class = "text-danger" })
-                @Html.ActionLink("Adicionar", "AdicionarEstilo", "Produto")
+                @Html.ActionLink("Adicionar", "AdicionarEstilo", "Produto", new { id="adEstilo"})
             </div>
         </div>
 
@@ -73,13 +69,13 @@
             <div class="col-md-10">
                 @Html.DropDownList("IdTamanho", (IEnumerable<SelectListItem>)ViewBag.tamanho, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdTamanho, "", new { @class = "text-danger" })
-                @Html.ActionLink("Adicionar", "AdicionarTamanho", "Produto")
+                @Html.ActionLink("Adicionar", "AdicionarTamanho", "Produto", new { id = "adTamanho" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cadastrar" class="btn btn-default" />
+                <input type="submit" value="Cadastrar" class="btn btn-default" id="salvaProduto" />
             </div>
         </div>
     </div>
@@ -87,28 +83,6 @@
 
 <div>
     @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Cancelar", "Adicionar","Produto", new { id="cancelar"})
 </div>
 
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Qual a nova Cor</h4>
-            </div>
-            <div class="modal-body">
-
-                <p>Cor</p>
-                <input type="text" name="ColorName" value="" />
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Confirmar</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-            </div>
-        </div>
-
-    </div>
-</div>
