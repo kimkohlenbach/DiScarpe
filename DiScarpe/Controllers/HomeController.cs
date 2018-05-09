@@ -28,28 +28,6 @@ namespace DiScarpe.Controllers
             return View(produtos);
         }
 
-        public ActionResult Masculino()
-        {
-            var model = from c in db.Produto
-                        orderby c.IdCategoria
-                        where c.IdCategoria == 2
-                        select c;
-            return View(model);
-        }
-
-        // GET: Home
-        public ActionResult ListaDesejos()
-        {
-            return View();
-        }
-
-        // CARRINHO DE COMPRAS
-        public ActionResult Carrinho()
-        {
-            return View();
-        }
-
-        // REGISTRAR ----------------------------------------------------------------
         public ActionResult Registrar()
         {
             return View();
@@ -68,7 +46,6 @@ namespace DiScarpe.Controllers
             return View(obj);
         }
 
-        // LOGIN ----------------------------------------------------------------
         public ActionResult Login()
         {
 
@@ -104,7 +81,7 @@ namespace DiScarpe.Controllers
                         Session["Email"] = info.Email;
                         Session["Nome"] = info.Nome;
                         Session["Administrador"] = info.Administrador;
-                        return RedirectToAction("ListaDesejos", "Home");
+                        return RedirectToAction("ListaDesejos", "Cliente");
                        
                     }
 

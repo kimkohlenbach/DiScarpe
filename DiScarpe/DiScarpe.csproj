@@ -152,6 +152,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\FemininoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MasculinoController.cs" />
@@ -309,8 +310,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\ListaDesejos.cshtml" />
-    <Content Include="Views\Home\Carrinho.cshtml" />
+    <Content Include="Views\Cliente\ListaDesejos.cshtml" />
+    <Content Include="Views\Cliente\Carrinho.cshtml" />
     <Content Include="Views\Produto\Index.cshtml" />
     <Content Include="Views\Feminino\Calcados.cshtml" />
     <Content Include="Views\Home\Masculino.cshtml" />
