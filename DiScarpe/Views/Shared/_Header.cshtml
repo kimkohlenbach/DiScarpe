@@ -1,29 +1,35 @@
 ﻿<div id="navbar">
     <div class="row justify-content-between">
-        <div class="col-md-4">
+        <div class="col-md-3">
             @Html.ActionLink("DiScarpe", "Index", "Home", new { @class = "nav-titulo" })<span class="store">Store</span>
         </div>
-        <div class="col-md-6">
-            <div class="dropdown">
-                <button class="dropbtn">@Html.ActionLink("Feminino", "Feminino", "Home", new { @class = "nav-button" })</button>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <hr />
-                    <a href="#">Link 2</a>
-                    <hr />
-                    <a href="#">Link 3</a>
+        <div class="col-md-3">
+            <div class="menu">
+                <div class="dropdown">
+                    <a class="dropbtn" href="~/Feminino/Calcados">Feminino</a>
+                    <div class="dropdown-content">
+                        <a href="~/Feminino/Botas">Botas</a>
+                        <hr />
+                        <a href="~/Feminino/Sandálias">Sandálias</a>
+                        <hr />
+                        <a href="~/Feminino/Sapatilhas">Sapatilhas</a>
+                        <hr />
+                        <a href="~/Feminino/Tênis">Tênis</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="dropbtn" href="~/Masculino/Calcados">Masculino</a>
+                    <div class="dropdown-content">
+                        <a href="~/Masculino/Botas">Botas</a>
+                        <hr />
+                        <a href="~/Masculino/Sandálias">Sandálias</a>
+                        <hr />
+                        <a href="~/Masculino/Tênis">Tênis</a>
+                    </div>
                 </div>
             </div>
-            <div class="dropdown">
-                <button class="dropbtn">@Html.ActionLink("Masculino", "Masculino", "Home", new { @class = "nav-button" })</button>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <hr />
-                    <a href="#">Link 2</a>
-                    <hr />
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
+        </div>
+        <div class="col-md-4">
             <div class="dropdown">
                 @using (Html.BeginForm("Index", "Home", FormMethod.Get))
                 {
@@ -34,8 +40,14 @@
                 |
             </div>
             <div class="dropdown">
+                <a class="nav-login" href="~/Cliente/ListaDesejos"><i class="far fa-heart"></i></a>
+            </div>
+            <div class="dropdown">
+                <a class="nav-login" href="~/Cliente/Carrinho"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <div class="dropdown">
                 @Session["Nome"]
-                @Html.ActionLink("Login", "Login", "Home", new { @class = "nav-login" })
+                <a class="nav-login" href="~/Home/Login">Login</a>
             </div>
         </div>
     </div>

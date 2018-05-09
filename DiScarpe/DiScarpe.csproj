@@ -152,7 +152,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\FemininoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MasculinoController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -307,10 +310,10 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\ListaDesejos.cshtml" />
-    <Content Include="Views\Home\Carrinho.cshtml" />
+    <Content Include="Views\Cliente\ListaDesejos.cshtml" />
+    <Content Include="Views\Cliente\Carrinho.cshtml" />
     <Content Include="Views\Produto\Index.cshtml" />
-    <Content Include="Views\Home\Feminino.cshtml" />
+    <Content Include="Views\Feminino\Calcados.cshtml" />
     <Content Include="Views\Home\Masculino.cshtml" />
     <Content Include="Views\Produto\Detalhes.cshtml" />
     <Content Include="Views\Produto\Adicionar.cshtml" />
@@ -321,6 +324,14 @@
     <Content Include="Views\Produto\AdicionarMarca.cshtml" />
     <Content Include="Views\Produto\AdicionarTamanho.cshtml" />
     <Content Include="Views\Home\Administracao.cshtml" />
+    <Content Include="Views\Shared\_Catálogo.cshtml" />
+    <Content Include="Views\Feminino\Tênis.cshtml" />
+    <Content Include="Views\Feminino\Botas.cshtml" />
+    <Content Include="Views\Feminino\Sandálias.cshtml" />
+    <Content Include="Views\Feminino\Sapatilhas.cshtml" />
+    <Content Include="Views\Masculino\Calcados.cshtml" />
+    <Content Include="Views\Masculino\Tênis.cshtml" />
+    <Content Include="Views\Masculino\Botas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

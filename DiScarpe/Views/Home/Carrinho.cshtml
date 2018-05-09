@@ -1,9 +1,0 @@
-﻿@{
-    if (Session["IdUsuario"] == null)
-    {
-        Response.Redirect("~/Home/Login");
-    }
-}
-
-<p class="paginaTitulo">Carrinho</p>
-<a href="@Url.Action("LogOut","Home")">Sair</a>

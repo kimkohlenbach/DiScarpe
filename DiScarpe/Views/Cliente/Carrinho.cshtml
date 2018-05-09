@@ -1,0 +1,77 @@
+﻿@model IEnumerable<DiScarpe.Models.Produto>
+
+@{
+    if (Session["IdUsuario"] == null)
+    {
+        Response.Redirect("~/Home/Login");
+    }
+}
+<a href="@Url.Action("LogOut","Home")">Sair</a>
+<p class="paginaTitulo">Carrinho de Compras</p>
+
+<br />
+<table class="table">
+    <tr>
+        <th>
+            <p>Nome</p>
+        </th>
+        <th>
+            <p>Descrição</p>
+        </th>
+        <th>
+            <p>Preço</p>
+        </th>
+        <th>
+            <p>Categoria</p>
+        </th>
+        <th>
+            <p>Cor</p>
+        </th>
+        <th>
+            <p>Estilo</p>
+        </th>
+        <th>
+            <p>Marca</p>
+        </th>
+        <th>
+            <p>Tamanho</p>
+        </th>
+        <th></th>
+    </tr>
+
+    @*@foreach (var item in Model) {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cor.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estilo.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marca.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tamanho.IdTamanho)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.IdProduto }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.IdProduto }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.IdProduto })
+                </td>
+            </tr>
+        }*@
+</table>
+<button class="btn btn-success" id="finalizarCompra" type="submit">Finalizar compra</button>

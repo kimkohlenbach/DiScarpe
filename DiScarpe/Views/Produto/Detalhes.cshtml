@@ -1,9 +1,12 @@
 ﻿@model DiScarpe.Models.Produto
+<p class="paginaTitulo">Destalhes do produto</p>
 <a href="~/"><i class="fas fa-arrow-left"></i></a>
 <div class="row">
-    <div class="col-md-6">
-        <img id="imagem" src="@String.Format("/Imagens/{0}/{1}/{2}/{3}/{4}.jpg", @Model.Categoria.Descricao, @Model.Marca.Descricao, @Model.Estilo.Descricao, @Model.Cor.Descricao, @Model.IdProduto)" alt="Card image cap" />
-    </div>
+    <div class="col-md-6" id="detalhesImagem">
+        <div class="row justify-content-md-center">
+            <img id="imagem" src="@String.Format("/Imagens/{0}/{1}/{2}/{3}/{4}.jpg", @Model.Categoria.Descricao, @Model.Marca.Descricao, @Model.Estilo.Descricao, @Model.Cor.Descricao, @Model.IdProduto)" alt="Card image cap" />
+        </div>
+        </div>
     <div class="col-md-6">
         <p class="nomeMarca">@Model.Marca.Descricao</p>
         <p class="nomeProduto">@Model.Nome</p>
@@ -23,7 +26,7 @@
         <div class="botoes">
             <div class="row">
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-success">Comprar</button>
+                    <a href="~/Home/Carrinho" class="btn btn-success">Comprar</a>
                 </div>
             </div>
             <div class="row">

@@ -246,7 +246,7 @@
           <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Senha" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Adminisrador" Type="Boolean" Nullable="false" />
+          <Property Name="Administrador" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="FK_Categoria">
           <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
@@ -417,7 +417,7 @@
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Senha" ColumnName="Senha" />
-                <ScalarProperty Name="Adminisrador" ColumnName="Adminisrador" />
+                <ScalarProperty Name="Administrador" ColumnName="Adminisrador" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

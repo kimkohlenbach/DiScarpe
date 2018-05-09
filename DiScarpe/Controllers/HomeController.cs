@@ -11,7 +11,6 @@ namespace DiScarpe.Controllers
     {
         private DiScarpeDBEntities db = new DiScarpeDBEntities();
 
-
         public ActionResult Index(string pesquisar)
         {
             return View(db.Produto.Where(x => x.Nome.Contains(pesquisar) || pesquisar == null).ToList());
@@ -29,38 +28,6 @@ namespace DiScarpe.Controllers
             return View(produtos);
         }
 
-        public ActionResult Feminino()
-        {
-            var model = from c in db.Produto
-                        orderby c.IdCategoria
-                        where c.IdCategoria == 1
-                        select c;
-
-            return View(model);
-        }
-
-        public ActionResult Masculino()
-        {
-            var model = from c in db.Produto
-                        orderby c.IdCategoria
-                        where c.IdCategoria == 2
-                        select c;
-            return View(model);
-        }
-
-        // GET: Home
-        public ActionResult ListaDesejos()
-        {
-            return View();
-        }
-
-        // CARRINHO DE COMPRAS
-        public ActionResult Carrinho()
-        {
-            return View();
-        }
-
-        // REGISTRAR ----------------------------------------------------------------
         public ActionResult Registrar()
         {
             return View();
@@ -79,7 +46,6 @@ namespace DiScarpe.Controllers
             return View(obj);
         }
 
-        // LOGIN ----------------------------------------------------------------
         public ActionResult Login()
         {
 
@@ -100,9 +66,13 @@ namespace DiScarpe.Controllers
                 }
                 else
                 {
-                    if (info.Adminisrador)
+                    if (info.Administrador)
                     {
-                      return RedirectToAction("Administracao", "Home");
+                        Session["IdUsuario"] = info.IdUsuario;
+                        Session["Email"] = info.Email;
+                        Session["Nome"] = info.Nome;
+                        Session["Administrador"] = info.Administrador;
+                        return RedirectToAction("Administracao", "Home");
                       
                     }
                     else
@@ -110,7 +80,8 @@ namespace DiScarpe.Controllers
                         Session["IdUsuario"] = info.IdUsuario;
                         Session["Email"] = info.Email;
                         Session["Nome"] = info.Nome;
-                        return RedirectToAction("ListaDesejos", "Home");
+                        Session["Administrador"] = info.Administrador;
+                        return RedirectToAction("ListaDesejos", "Cliente");
                        
                     }
 
