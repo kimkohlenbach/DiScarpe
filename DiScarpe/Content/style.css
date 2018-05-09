@@ -103,13 +103,14 @@ body {
     color: white;
 }
 
+.menu {
+    margin-top: 4px;
+}
+
 .dropbtn {
     background: none;
     border: none;
     color: white;
-}
-
-.dropbtn {
     text-transform: uppercase;
     transition: 0.3s;
 }
@@ -306,10 +307,10 @@ body {
 
 /* ------------- RODAPÉ------------- */
 footer {
-
     font-family: 'Barlow Condensed', sans-serif;
     background-color: #333333;
     color: white;
     padding-top: -150px;
     margin-bottom: -50px;
+    bottom: 0;
 }

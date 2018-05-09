@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace DiScarpe.Controllers
 {
-    public class FemininoController : Controller
+    public class MasculinoController : Controller
     {
         private DiScarpeDBEntities db = new DiScarpeDBEntities();
 
@@ -15,7 +15,7 @@ namespace DiScarpe.Controllers
         {
             var model = from c in db.Produto
                         orderby c.IdCategoria
-                        where c.IdCategoria == 1
+                        where c.IdCategoria == 2
                         select c;
 
             return View(model);
@@ -25,7 +25,7 @@ namespace DiScarpe.Controllers
         {
             var model = from c in db.Produto
                         orderby c.IdEstilo
-                        where c.IdCategoria == 1
+                        where c.IdCategoria == 2
                         where c.IdEstilo == 2
                         select c;
 
@@ -36,19 +36,8 @@ namespace DiScarpe.Controllers
         {
             var model = from c in db.Produto
                         orderby c.IdEstilo
-                        where c.IdCategoria == 1
+                        where c.IdCategoria == 2
                         where c.IdEstilo == 3
-                        select c;
-
-            return View(model);
-        }
-
-        public ActionResult Sapatilhas()
-        {
-            var model = from c in db.Produto
-                        orderby c.IdEstilo
-                        where c.IdCategoria == 1
-                        where c.IdEstilo == 4
                         select c;
 
             return View(model);
@@ -58,11 +47,13 @@ namespace DiScarpe.Controllers
         {
             var model = from c in db.Produto
                         orderby c.IdEstilo
-                        where c.IdCategoria == 1
+                        where c.IdCategoria == 2
                         where c.IdEstilo == 1
                         select c;
 
             return View(model);
         }
+
+
     }
 }

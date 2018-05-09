@@ -1,7 +1,19 @@
 ﻿@model DiScarpe.Models.Produto
 @{
-    ViewBag.Title = "AddMercadoria";
+    if (Session["IdUsuario"] == null)
+    {
+        Response.Redirect("~/Home/Login");
+    }
+    //else
+    //{
+    //    if (Convert.ToInt32(Session["Administrador"]) == 1)
+    //    {
+    //        Response.Redirect("~/Home/Login");
+    //    }
+    //}
+
 }
+<a href="@Url.Action("LogOut","Home")">Sair</a>
 
 @using (Html.BeginForm())
 {

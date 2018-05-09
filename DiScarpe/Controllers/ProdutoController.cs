@@ -10,8 +10,6 @@ namespace DiScarpe.Controllers
     public class ProdutoController : Controller
     {
         private DiScarpeDBEntities db = new DiScarpeDBEntities();
-<<<<<<< HEAD
-=======
 
 
         //public ActionResult Index(string pesquisar)
@@ -52,7 +50,6 @@ namespace DiScarpe.Controllers
         //                select c;
         //    return View(model);
         //}
->>>>>>> fd6418acf7f439eec2f5b370893b3a5763a75578
 
         public ActionResult Detalhes(int produtoId)
         {
