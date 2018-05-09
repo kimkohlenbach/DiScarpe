@@ -175,6 +175,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseDeDados.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Carrinho.cs">
+      <DependentUpon>BaseDeDados.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Categoria.cs">
       <DependentUpon>BaseDeDados.tt</DependentUpon>
     </Compile>
@@ -182,6 +185,9 @@
       <DependentUpon>BaseDeDados.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Estilo.cs">
+      <DependentUpon>BaseDeDados.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Favorito.cs">
       <DependentUpon>BaseDeDados.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Marca.cs">
@@ -245,13 +251,6 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
-    <EntityDeploy Include="Models\BaseDeDados.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BaseDeDados.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\BaseDeDados.edmx.diagram">
-      <DependentUpon>BaseDeDados.edmx</DependentUpon>
-    </Content>
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
@@ -262,6 +261,13 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="Models\BaseDeDados.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BaseDeDados.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BaseDeDados.edmx.diagram">
+      <DependentUpon>BaseDeDados.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

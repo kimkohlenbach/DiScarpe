@@ -25,9 +25,11 @@ namespace DiScarpe.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Carrinho> Carrinho { get; set; }
         public virtual DbSet<Categoria> Categoria { get; set; }
         public virtual DbSet<Cor> Cor { get; set; }
         public virtual DbSet<Estilo> Estilo { get; set; }
+        public virtual DbSet<Favorito> Favorito { get; set; }
         public virtual DbSet<Marca> Marca { get; set; }
         public virtual DbSet<Produto> Produto { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
