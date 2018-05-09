@@ -90,18 +90,6 @@
           <Property Name="Senha" Type="varchar" MaxLength="16" Nullable="false" />
           <Property Name="Adminisrador" Type="bit" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Carrinho_Produto">
-          <End Role="Produto" Type="Self.Produto" Multiplicity="1" />
-          <End Role="Carrinho" Type="Self.Carrinho" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Produto">
-              <PropertyRef Name="IdProduto" />
-            </Principal>
-            <Dependent Role="Carrinho">
-              <PropertyRef Name="IdProduto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Categoria">
           <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
           <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
@@ -138,30 +126,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Favorito_Produto">
-          <End Role="Produto" Type="Self.Produto" Multiplicity="1" />
-          <End Role="Favorito" Type="Self.Favorito" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Produto">
-              <PropertyRef Name="IdProduto" />
-            </Principal>
-            <Dependent Role="Favorito">
-              <PropertyRef Name="IdProduto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Favorito_Usuario">
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-          <End Role="Favorito" Type="Self.Favorito" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="IdUsuario" />
-            </Principal>
-            <Dependent Role="Favorito">
-              <PropertyRef Name="IdUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Marca">
           <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
           <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
@@ -186,18 +150,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Usuario_Carrinho">
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-          <End Role="Carrinho" Type="Self.Carrinho" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="IdUsuario" />
-            </Principal>
-            <Dependent Role="Carrinho">
-              <PropertyRef Name="IdUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="DiScarpeDBModelsStoreContainer">
           <EntitySet Name="Carrinho" EntityType="Self.Carrinho" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
@@ -209,10 +161,6 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tamanho" EntityType="Self.Tamanho" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Carrinho_Produto" Association="Self.FK_Carrinho_Produto">
-            <End Role="Produto" EntitySet="Produto" />
-            <End Role="Carrinho" EntitySet="Carrinho" />
-          </AssociationSet>
           <AssociationSet Name="FK_Categoria" Association="Self.FK_Categoria">
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Produto" EntitySet="Produto" />
@@ -225,14 +173,6 @@
             <End Role="Estilo" EntitySet="Estilo" />
             <End Role="Produto" EntitySet="Produto" />
           </AssociationSet>
-          <AssociationSet Name="FK_Favorito_Produto" Association="Self.FK_Favorito_Produto">
-            <End Role="Produto" EntitySet="Produto" />
-            <End Role="Favorito" EntitySet="Favorito" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Favorito_Usuario" Association="Self.FK_Favorito_Usuario">
-            <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="Favorito" EntitySet="Favorito" />
-          </AssociationSet>
           <AssociationSet Name="FK_Marca" Association="Self.FK_Marca">
             <End Role="Marca" EntitySet="Marca" />
             <End Role="Produto" EntitySet="Produto" />
@@ -240,10 +180,6 @@
           <AssociationSet Name="FK_Tamanho" Association="Self.FK_Tamanho">
             <End Role="Tamanho" EntitySet="Tamanho" />
             <End Role="Produto" EntitySet="Produto" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Usuario_Carrinho" Association="Self.FK_Usuario_Carrinho">
-            <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="Carrinho" EntitySet="Carrinho" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -258,8 +194,6 @@
           <Property Name="IdCarrinho" Type="Int32" Nullable="false" />
           <Property Name="IdUsuario" Type="Int32" Nullable="false" />
           <Property Name="IdProduto" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Produto" Relationship="Self.FK_Carrinho_Produto" FromRole="Carrinho" ToRole="Produto" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK_Usuario_Carrinho" FromRole="Carrinho" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Categoria">
           <Key>
@@ -292,8 +226,6 @@
           <Property Name="IdFavorito" Type="Int32" Nullable="false" />
           <Property Name="IdUsuario" Type="Int32" Nullable="false" />
           <Property Name="IdProduto" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Produto" Relationship="Self.FK_Favorito_Produto" FromRole="Favorito" ToRole="Produto" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK_Favorito_Usuario" FromRole="Favorito" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Marca">
           <Key>
@@ -316,11 +248,9 @@
           <Property Name="IdTamanho" Type="Int32" Nullable="false" />
           <Property Name="Descricao" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="Preco" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-          <NavigationProperty Name="Carrinho" Relationship="Self.FK_Carrinho_Produto" FromRole="Produto" ToRole="Carrinho" />
           <NavigationProperty Name="Categoria" Relationship="Self.FK_Categoria" FromRole="Produto" ToRole="Categoria" />
           <NavigationProperty Name="Cor" Relationship="Self.FK_Cor" FromRole="Produto" ToRole="Cor" />
           <NavigationProperty Name="Estilo" Relationship="Self.FK_Estilo" FromRole="Produto" ToRole="Estilo" />
-          <NavigationProperty Name="Favorito" Relationship="Self.FK_Favorito_Produto" FromRole="Produto" ToRole="Favorito" />
           <NavigationProperty Name="Marca" Relationship="Self.FK_Marca" FromRole="Produto" ToRole="Marca" />
           <NavigationProperty Name="Tamanho" Relationship="Self.FK_Tamanho" FromRole="Produto" ToRole="Tamanho" />
         </EntityType>
@@ -351,33 +281,7 @@
           <Property Name="Email" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Senha" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Adminisrador" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Carrinho" Relationship="Self.FK_Usuario_Carrinho" FromRole="Usuario" ToRole="Carrinho" />
-          <NavigationProperty Name="Favorito" Relationship="Self.FK_Favorito_Usuario" FromRole="Usuario" ToRole="Favorito" />
         </EntityType>
-        <Association Name="FK_Carrinho_Produto">
-          <End Role="Produto" Type="Self.Produto" Multiplicity="1" />
-          <End Role="Carrinho" Type="Self.Carrinho" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Produto">
-              <PropertyRef Name="IdProduto" />
-            </Principal>
-            <Dependent Role="Carrinho">
-              <PropertyRef Name="IdProduto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Usuario_Carrinho">
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-          <End Role="Carrinho" Type="Self.Carrinho" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="IdUsuario" />
-            </Principal>
-            <Dependent Role="Carrinho">
-              <PropertyRef Name="IdUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Categoria">
           <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
           <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
@@ -411,30 +315,6 @@
             </Principal>
             <Dependent Role="Produto">
               <PropertyRef Name="IdEstilo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Favorito_Produto">
-          <End Role="Produto" Type="Self.Produto" Multiplicity="1" />
-          <End Role="Favorito" Type="Self.Favorito" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Produto">
-              <PropertyRef Name="IdProduto" />
-            </Principal>
-            <Dependent Role="Favorito">
-              <PropertyRef Name="IdProduto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Favorito_Usuario">
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-          <End Role="Favorito" Type="Self.Favorito" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="IdUsuario" />
-            </Principal>
-            <Dependent Role="Favorito">
-              <PropertyRef Name="IdUsuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -473,14 +353,6 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Tamanho" EntityType="Self.Tamanho" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-          <AssociationSet Name="FK_Carrinho_Produto" Association="Self.FK_Carrinho_Produto">
-            <End Role="Produto" EntitySet="Produto" />
-            <End Role="Carrinho" EntitySet="Carrinho" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Usuario_Carrinho" Association="Self.FK_Usuario_Carrinho">
-            <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="Carrinho" EntitySet="Carrinho" />
-          </AssociationSet>
           <AssociationSet Name="FK_Categoria" Association="Self.FK_Categoria">
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Produto" EntitySet="Produto" />
@@ -492,14 +364,6 @@
           <AssociationSet Name="FK_Estilo" Association="Self.FK_Estilo">
             <End Role="Estilo" EntitySet="Estilo" />
             <End Role="Produto" EntitySet="Produto" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Favorito_Produto" Association="Self.FK_Favorito_Produto">
-            <End Role="Produto" EntitySet="Produto" />
-            <End Role="Favorito" EntitySet="Favorito" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Favorito_Usuario" Association="Self.FK_Favorito_Usuario">
-            <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="Favorito" EntitySet="Favorito" />
           </AssociationSet>
           <AssociationSet Name="FK_Marca" Association="Self.FK_Marca">
             <End Role="Marca" EntitySet="Marca" />

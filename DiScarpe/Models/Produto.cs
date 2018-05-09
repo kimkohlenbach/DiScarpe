@@ -14,13 +14,6 @@ namespace DiScarpe.Models
     
     public partial class Produto
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Produto()
-        {
-            this.Carrinho = new HashSet<Carrinho>();
-            this.Favorito = new HashSet<Favorito>();
-        }
-    
         public int IdProduto { get; set; }
         public string Nome { get; set; }
         public int IdCategoria { get; set; }
@@ -31,13 +24,9 @@ namespace DiScarpe.Models
         public string Descricao { get; set; }
         public decimal Preco { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Carrinho> Carrinho { get; set; }
         public virtual Categoria Categoria { get; set; }
         public virtual Cor Cor { get; set; }
         public virtual Estilo Estilo { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Favorito> Favorito { get; set; }
         public virtual Marca Marca { get; set; }
         public virtual Tamanho Tamanho { get; set; }
     }

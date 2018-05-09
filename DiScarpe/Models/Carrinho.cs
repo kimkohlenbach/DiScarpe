@@ -17,8 +17,5 @@ namespace DiScarpe.Models
         public int IdCarrinho { get; set; }
         public int IdUsuario { get; set; }
         public int IdProduto { get; set; }
-    
-        public virtual Produto Produto { get; set; }
-        public virtual Usuario Usuario { get; set; }
     }
 }
