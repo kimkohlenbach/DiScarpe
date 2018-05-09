@@ -2,3 +2,4 @@
 /.vs
 /DiScarpe/obj
 /DiScarpe/bin
+/DiScarpe/*.csproj
