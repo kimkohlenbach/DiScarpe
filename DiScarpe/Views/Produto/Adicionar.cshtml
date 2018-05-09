@@ -39,7 +39,7 @@
             <div class="col-md-10">
                 @Html.DropDownList("IdCategoria", (IEnumerable<SelectListItem>)ViewBag.cat, htmlAttributes: new { @class = "form-control", id="dropCategoria" })
                 @Html.ValidationMessageFor(model => model.IdCategoria, "", new { @class = "text-danger" })
-                @Html.ActionLink("Adicionar", "Categoria", "Produto", new { id="adCategoria"})
+                @Html.ActionLink("Adicionar", "Categoria", "Produto", new { id="adCategoria",  onClick="SaveElements()" })
 
             </div>
         </div>
@@ -51,7 +51,7 @@
             <div class="col-md-10">
                 @Html.DropDownList("IdCor", (IEnumerable<SelectListItem>)ViewBag.color, htmlAttributes: new { @class = "form-control", id = "dropCor" })
                 @Html.ValidationMessageFor(model => model.IdCor, "", new { @class = "text-danger" })
-                @Html.ActionLink("Adicionar", "AdicionarCor", "Produto", new { id = "adCor" })
+                @Html.ActionLink("Adicionar", "AdicionarCor", "Produto", new { id = "adCor", onClick = "SaveElements()" })
             </div>
         </div>
 
@@ -61,7 +61,7 @@
             <div class="col-md-10">
                 @Html.DropDownList("IdMarca", (IEnumerable<SelectListItem>)ViewBag.marca, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdMarca, "", new { @class = "text-danger" })
-                @Html.ActionLink("Adicionar", "AdicionarMarca", "Produto", new { id="adMarca"})
+                @Html.ActionLink("Adicionar", "AdicionarMarca", "Produto", new { id="adMarca", onClick = "SaveElements()" })
             </div>
         </div>
 
@@ -71,7 +71,7 @@
             <div class="col-md-10">
                 @Html.DropDownList("IdEstilo", (IEnumerable<SelectListItem>)ViewBag.estilo, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdEstilo, "", new { @class = "text-danger" })
-                @Html.ActionLink("Adicionar", "AdicionarEstilo", "Produto", new { id="adEstilo"})
+                @Html.ActionLink("Adicionar", "AdicionarEstilo", "Produto", new { id="adEstilo", onClick = "SaveElements()" })
             </div>
         </div>
 
@@ -81,13 +81,13 @@
             <div class="col-md-10">
                 @Html.DropDownList("IdTamanho", (IEnumerable<SelectListItem>)ViewBag.tamanho, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdTamanho, "", new { @class = "text-danger" })
-                @Html.ActionLink("Adicionar", "AdicionarTamanho", "Produto", new { id = "adTamanho" })
+                @Html.ActionLink("Adicionar", "AdicionarTamanho", "Produto", new { id = "adTamanho", onClick = "SaveElements()" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cadastrar" class="btn btn-default" id="salvaProduto" />
+                <input type="submit" value="Cadastrar" class="btn btn-default" id="salvaProduto"  onClick="toCleanStorage()" />
             </div>
         </div>
     </div>
@@ -95,6 +95,6 @@
 
 <div>
     @Html.ActionLink("Back to List", "Index")
-    @Html.ActionLink("Cancelar", "Adicionar","Produto", new { id="cancelar"})
+    @Html.ActionLink("Cancelar", "Adicionar","Produto", new { id="cancelar", onClick="toCleanStorage()"})
 </div>
 

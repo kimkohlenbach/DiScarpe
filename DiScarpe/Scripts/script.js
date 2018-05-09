@@ -1,113 +1,43 @@
-
-﻿var cProduto = document.getElementById("cProduto");
-var dropCor = document.getElementById("dropCor");
-var dropCategoria = document.getElementById("dropCategoria");
-var dropMarca = document.getElementById("dropMarca");
-var dropEstilo = document.getElementById("dropEstilo");
-var dropTamanho = document.getElementById("dropTamanho");
-
-
 $(document).ready(function () {
     $('.nTamanho').click(function () {
         $('.nTamanho.active').removeClass("active");
         $(this).addClass("active");
     });
-    window.localStorage.setItem("PrimeiraRodada", "true");
 
-    
-  
+    var firstTime = localStorage.getItem("first_time");
+    if (!firstTime) {
+        // first time loaded!
+        toCleanStorage();
+        localStorage.setItem("first_time", "1");
 
-   
-    //dropCategoria.value = localStorage.getItem("Categoria");
-    //dropCor.value = localStorage.getItem("Cor");
-    //dropMarca.value = localStorage.getItem("Marca");
-    //dropTamanho.value = localStorage.getItem("Tamanho");
-    //dropEstilo.value = localStorage.getItem("Estilo");
-
-    $("#adCategoria").click(function () {
-
-        prepair("adCategoria");
-    })
-    $("#adCor").click(function () {
-        ToPersiste();
-
-    })
-    $("#adMarca").click(function () {
-        ToPersiste();
-
-    })
-    $("#adEstilo").click(function () {
-        ToPersiste();
-
-    })
-    $("#adTamanho").click(function () {
-        ToPersiste();
-
-    })
-    $("#salvaProduto").click(function () {
-        ToCleanStorage();
-
-    })
-    $("#cancelar").click(function () {
-        ToCleanStorage();
-    })
-})
-
-function showInScreen() {
-    if (localStorage.getItem("PrimeiraRodada") == "true") {
-        if (localStorage.getItem("Nome") != "") {
-            cProduto.value = localStorage.getItem("Nome");
-        }
-    }
-}
-
-function prepair(comand) {
-    var guardar = window.localStorage;
-    if (cProduto.value != "") {
-        guardar.setItem("Nome", $('#cProduto').val());
-        alert(guardar.getItem("Nome"));
     }
     else {
-        if (cProduto.value != guardar.getItem("Nome")) {
-            localStorage.removeItem("Nome");
-            guardar.setItem("Nome", $('#cProduto').val());
-        }
+        RecoveryData();
     }
+   
+})
+
+function RecoveryData() {
+    cProduto.value = window.localStorage.getItem("Nome");
+    dropCategoria.value = window.localStorage.getItem("Categoria");
+    dropCor.value = window.localStorage.getItem("Cor");
+    dropMarca.value = window.localStorage.getItem("Marca");
+    dropEstilo.value = window.localStorage.getItem("Estilo");
+    dropTamanho.value = window.localStorage.getItem("Tamanho");
 
 }
 
+function SaveElements() {
+    window.localStorage.setItem("Nome", document.getElementById("cProduto").value);
+    window.localStorage.setItem("Categoria", document.getElementById("dropCategoria").value);
+    window.localStorage.setItem("Cor", document.getElementById("dropCor").value);
+    window.localStorage.setItem("Marca", document.getElementById("dropMarca").value);
+    window.localStorage.setItem("Estilo", document.getElementById("dropEstilo").value);
+    window.localStorage.setItem("Tamanho", documento.getElementById("dropTamanho").value);
+}
 
 function toCleanStorage() {
     window.localStorage.clear();
-    alert("Storage Limpo")
+  
 }
 
-//function sentScreen() {
-
-
-//    var cProduto = document.getElementById("cProduto");
-//    var dropCor = document.getElementById("dropCor");
-//    var dropCategoria = document.getElementById("dropCategoria");
-//    var dropMarca = document.getElementById("dropMarca");
-//    var dropEstilo = document.getElementById("dropEstilo");
-//    var dropTamanho = document.getElementById("dropTamanho");
-
-//    cProduto.value = localStorage.getItem("Nome");
-//    dropCategoria.value = localStorage.getItem("Categoria");
-//    dropCor.value = localStorage.getItem("Cor");
-//    dropMarca.value = localStorage.getItem("Marca");
-//    dropTamanho.value = localStorage.getItem("Tamanho");
-//    dropEstilo.value = localStorage.getItem("Estilo");
-
-
-//}
-
-//function ToPersiste() {
-//    var guardar = window.localStorage;
-//    
-//    guardar.setItem("Cor", $('#dropCor').val());
-//    guardar.setItem("Categoria", $('#dropCategoria').val());
-//    guardar.setItem("Marca", $('#dropMarca').val());
-//    guardar.setItem("Estilo", $('#dropEstilo').val());
-//    guardar.setItem("Tamanho", $('#dropTamanho').val());
-//}
