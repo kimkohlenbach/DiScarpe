@@ -11,7 +11,6 @@ namespace DiScarpe.Controllers
     {
         private DiScarpeDBEntities db = new DiScarpeDBEntities();
 
-
         public ActionResult Index(string pesquisar)
         {
             return View(db.Produto.Where(x => x.Nome.Contains(pesquisar) || pesquisar == null).ToList());
