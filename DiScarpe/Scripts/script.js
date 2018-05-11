@@ -79,13 +79,26 @@ $("#adicionarCarrinho").click(function () {
             + '<span class="glyphicon glyphicon-exclamation-sign" aria- hidden="true"></span >'
             + '<span class="sr-only"></span> Você deve fazer o login primeiro!</div>');
     }
-    else {
-        console.log("ok");
-        alert("Ok");
-    }
 });
 
 function ComprarAgora() {
     Alert("Comprado");
 }
 
+function addCart(idProduto, idUsuario) {
+    var Armazenado;
+    var Produto = [];
+    window.sessionStorage.setItem("Usuario", idUsuario);
+    if (!window.sessionStorage.getItem("ProdutoUsuario")) {
+
+        window.sessionStorage.setItem("ProdutoUsuario", JSON.stringify(idProduto));
+    }
+    else {
+        Armazenado = JSON.parse(window.sessionStorage.getItem("ProdutoUsuario"));
+        Produto.push(Armazenado);
+        Produto.push(idProduto);
+        window.sessionStorage.setItem("ProdutoUsuario", JSON.stringify(Produto));
+    }
+
+    
+}
