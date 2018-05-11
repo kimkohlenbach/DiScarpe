@@ -82,17 +82,13 @@ namespace DiScarpe.Controllers
                         Session["Nome"] = info.Nome;
                         Session["Administrador"] = info.Administrador;
                         return RedirectToAction("ListaDesejos", "Cliente");
-                       
                     }
-
                 }
             }
         }
 
         public ActionResult Administracao()
         {
-
-
                 return View();
         }
 

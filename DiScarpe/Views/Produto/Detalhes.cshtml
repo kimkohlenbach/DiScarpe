@@ -1,18 +1,20 @@
 ﻿@model DiScarpe.Models.Produto
 <p class="paginaTitulo">Destalhes do produto</p>
-<a href="~/"><i class="fas fa-arrow-left"></i></a>
+<a href="~/"><i id="voltarPagina" class="fas fa-arrow-left"></i></a>
 <div class="row">
     <div class="col-md-6" id="detalhesImagem">
         <div class="row justify-content-md-center">
             <img id="imagem" src="@String.Format("/Imagens/{0}/{1}/{2}/{3}/{4}.jpg", @Model.Categoria.Descricao, @Model.Marca.Descricao, @Model.Estilo.Descricao, @Model.Cor.Descricao, @Model.IdProduto)" alt="Card image cap" />
         </div>
-        </div>
+    </div>
     <div class="col-md-6">
-        <p class="nomeMarca">@Model.Marca.Descricao</p>
         <p class="nomeProduto">@Model.Nome</p>
         <p class="valorProduto">R$ @Convert.ToDecimal(@Model.Preco)</p>
-        <p class="subtitulo">Detalhes do produto</p>
-        <p class="descricaoProduto">@Model.Descricao</p>
+        <div>
+            <p class="subtitulo">Detalhes do produto</p>
+            <p class="texto">@Model.Descricao</p>
+            <p class="texto">Cor: @Model.Cor.Descricao</p>
+        </div>
         <p class="subtitulo">Escolha o seu tamanho</p>
         <ul class="gradeTamanhos">
             <li class="nTamanho">34</li>
@@ -25,20 +27,17 @@
         <br />
         <div class="botoes">
             <div class="row">
-                <div class="col-md-12">
-                    <a href="~/Home/Carrinho" class="btn btn-success">Comprar</a>
+                <div class="col-md-4">
+                    <a id="comprarProduto" href="~/Home/Carrinho" class="btn btn-success">Comprar</a>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <button id="adicionarFavoritos" type="button" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="Adicionar a Lista de Desejos"><i class="fas fa-heart"></i></button>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <button id="adicionarCarrinho" type="button" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="Adicionar ao Carrinho de Compras"><i class="fas fa-shopping-cart"></i></button>
                 </div>
             </div>
             <div class="row" id="mensagemLogin">
-
             </div>
         </div>
     </div>
