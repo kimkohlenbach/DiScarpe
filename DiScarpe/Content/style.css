@@ -71,14 +71,22 @@ body {
 }
 
 
-#detalhesProduto {
+.gradeTamanhos {
+    font-family: 'Barlow Condensed', sans-serif;
     list-style: none;
 }
 
-    #detalhesProduto li {
-        font-size: 18px;
-        margin-left: 60px;
+    .gradeTamanhos li {
+        display: inline;
+        padding: 10px;
+        cursor: pointer;
+        transition: 0.3s;
     }
+
+        .gradeTamanhos li:hover, .gradeTamanhos li.active {
+            background-color: mediumseagreen;
+            color: white;
+        }
 
 
 #comprarProduto {
@@ -336,22 +344,7 @@ body {
     font-weight: 700;
 }
 
-.gradeTamanhos {
-    font-family: 'Barlow Condensed', sans-serif;
-    list-style: none;
-}
 
-    .gradeTamanhos li {
-        display: inline;
-        padding: 10px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-        .gradeTamanhos li:hover, .gradeTamanhos li.active {
-            background-color: mediumseagreen;
-            color: white;
-        }
 
 
 
