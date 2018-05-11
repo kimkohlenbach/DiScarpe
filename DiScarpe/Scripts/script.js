@@ -1,14 +1,14 @@
 $(document).ready(function () {
     $('.nTamanho').click(function () {
-        $('.nTamanho.active').removeClass("active");
-        $(this).addClass("active");
+        $('.nTamanho.active').removeClass("active"); //aqui removemos a class do item anteriormente clicado para que possamos adicionar ao item clicado
+        $(this).addClass("active"); //aqui adicionamos a class ao item clicado
     });
 
     if (document.getElementById("cProduto")) {
         RecoveryData();
     }
-})
 
+});
 function RecoveryData() {
 
     if (window.localStorage.getItem("Nome")) {
@@ -77,7 +77,7 @@ $("#adicionarCarrinho").click(function () {
     if (nomeUsuario == "") {
         $("#mensagemLogin").append('<div class="alert alert-danger" role="alert">'
             + '<span class="glyphicon glyphicon-exclamation-sign" aria- hidden="true"></span >'
-            + '<span class="sr-only"></span> Você deve fazer o login primeiro!</div>');
+            + '<span class="sr-only"></span> Vocï¿½ deve fazer o login primeiro!</div>');
     }
 });
 
@@ -85,7 +85,6 @@ function ComprarAgora() {
     Alert("Comprado");
 }
 
-<<<<<<< HEAD
 function addCart(idProduto, idUsuario) {
     var Armazenado;
     var Produto = [];
@@ -103,12 +102,3 @@ function addCart(idProduto, idUsuario) {
 
     
 }
-=======
-
-$(document).ready(function () {
-    $('.nTamanho').click(function () {
-        $('.nTamanho.active').removeClass("active"); //aqui removemos a class do item anteriormente clicado para que possamos adicionar ao item clicado
-        $(this).addClass("active"); //aqui adicionamos a class ao item clicado
-    });
-});
->>>>>>> 9521af1240d5a7cc3692eddd187d2dc54d300821
