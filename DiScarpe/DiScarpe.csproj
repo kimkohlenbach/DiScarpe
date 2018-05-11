@@ -219,9 +219,11 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Imagens\Feminino\Florense\Bota\Preto\7.jpg" />
+    <Content Include="Imagens\Feminino\Florense\Bota\Preto\8.jpg" />
     <Content Include="Imagens\Feminino\Moleca\Tênis\Azul-Marinho\8.jpg" />
     <Content Include="Imagens\Feminino\Bebecê\Tênis\Branco\2.jpg" />
     <Content Include="Imagens\Feminino\Moleca\Tênis\Branco\1.jpg" />
+    <Content Include="Imagens\Feminino\Moleca\Tênis\Preto\10.jpg" />
     <Content Include="Imagens\Feminino\Rioutlet\Bota\Marrom\6.jpg" />
     <Content Include="Imagens\Masculino\Monte Carlo Polo Club\Tênis\Preto\3.jpg" />
     <Content Include="ApplicationInsights.config">
