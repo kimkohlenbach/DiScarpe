@@ -33,17 +33,17 @@
             <div class="dropdown">
                 @using (Html.BeginForm("Index", "Home", FormMethod.Get))
                 {
-                    @Html.TextBox("pesquisar", "", new { @class = "campo-pesquisa" })<button type="submit" class="search-box-button"><span class="fa fa-search"></span></button>
+                    @Html.TextBox("pesquisar", "", new { @class = "campo-pesquisa" })<button type="submit" class="search-box-button" title="Pesquisar"><span class="fa fa-search"></span></button>
                 }
             </div>
             <div class="dropdown">
                 |
             </div>
             <div class="dropdown">
-                <a class="nav-login" href="~/Cliente/ListaDesejos"><i class="far fa-heart"></i></a>
+                <a class="nav-login" href="~/Cliente/ListaDesejos" title="Lista de Desejos"><i class="fas fa-heart"></i></a>
             </div>
             <div class="dropdown">
-                <a class="nav-login" href="~/Cliente/Carrinho"><i class="fas fa-shopping-cart"></i></a>
+                <a class="nav-login" href="~/Cliente/Carrinho" title="Carrinho de Compras"><i class="fas fa-shopping-cart" ></i></a>
             </div>
             <div class="dropdown">
                 <p id="nomeUsuario">@Session["Nome"]</p>

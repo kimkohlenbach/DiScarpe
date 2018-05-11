@@ -10,7 +10,7 @@ $(document).ready(function () {
 })
 
 function RecoveryData() {
-   
+
     if (window.localStorage.getItem("Nome")) {
         document.getElementById("cProduto").value = window.localStorage.getItem("Nome");
     }
@@ -85,6 +85,7 @@ function ComprarAgora() {
     Alert("Comprado");
 }
 
+<<<<<<< HEAD
 function addCart(idProduto, idUsuario) {
     var Armazenado;
     var Produto = [];
@@ -102,3 +103,12 @@ function addCart(idProduto, idUsuario) {
 
     
 }
+=======
+
+$(document).ready(function () {
+    $('.nTamanho').click(function () {
+        $('.nTamanho.active').removeClass("active"); //aqui removemos a class do item anteriormente clicado para que possamos adicionar ao item clicado
+        $(this).addClass("active"); //aqui adicionamos a class ao item clicado
+    });
+});
+>>>>>>> 9521af1240d5a7cc3692eddd187d2dc54d300821

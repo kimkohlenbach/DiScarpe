@@ -102,8 +102,8 @@ namespace DiScarpe.Controllers
                 ViewBag.estilo = listaEstilos;
                 return View();
             }
-
         }
+
         [HttpPost]
         public ActionResult Adicionar(Produto P)
         {
