@@ -1,45 +1,73 @@
-//$(document).ready(function () {
-//    $('.nTamanho').click(function () {
-//        $('.nTamanho.active').removeClass("active");
-//        $(this).addClass("active");
-//    });
+$(document).ready(function () {
+    $('.nTamanho').click(function () {
+        $('.nTamanho.active').removeClass("active");
+        $(this).addClass("active");
+    });
 
-//    var firstTime = localStorage.getItem("first_time");
-//    if (!firstTime) {
-//        // first time loaded!
-//        toCleanStorage();
-//        localStorage.setItem("first_time", "1");
+    if (document.getElementById("cProduto")) {
+        RecoveryData();
+    }
+})
 
-//    }
-//    else {
-//        RecoveryData();
-//    }
+function RecoveryData() {
    
-//})
+    if (window.localStorage.getItem("Nome")) {
+        document.getElementById("cProduto").value = window.localStorage.getItem("Nome");
+    }
+    if (window.localStorage.getItem("Categoria")) {
+        dropCategoria.value = window.localStorage.getItem("Categoria");
+    }
 
-//function RecoveryData() {
-//    cProduto.value = window.localStorage.getItem("Nome");
-//    dropCategoria.value = window.localStorage.getItem("Categoria");
-//    dropCor.value = window.localStorage.getItem("Cor");
-//    dropMarca.value = window.localStorage.getItem("Marca");
-//    dropEstilo.value = window.localStorage.getItem("Estilo");
-//    dropTamanho.value = window.localStorage.getItem("Tamanho");
+    if (window.localStorage.getItem("Cor")) {
+        dropCor.value = window.localStorage.getItem("Cor");
+    }
+    if (window.localStorage.getItem("Marca")) {
+        dropMarca.value = window.localStorage.getItem("Marca");
+    }
+    if (window.localStorage.getItem("Estilo")) {
+        dropEstilo.value = window.localStorage.getItem("Estilo");
+    }
 
-//}
+    if (window.localStorage.getItem("Tamanho")) {
+        dropTamanho.value = window.localStorage.getItem("Tamanho");
+    }
 
-//function SaveElements() {
-//    window.localStorage.setItem("Nome", document.getElementById("cProduto").value);
-//    window.localStorage.setItem("Categoria", document.getElementById("dropCategoria").value);
-//    window.localStorage.setItem("Cor", document.getElementById("dropCor").value);
-//    window.localStorage.setItem("Marca", document.getElementById("dropMarca").value);
-//    window.localStorage.setItem("Estilo", document.getElementById("dropEstilo").value);
-//    window.localStorage.setItem("Tamanho", documento.getElementById("dropTamanho").value);
-//}
 
-//function toCleanStorage() {
-//    window.localStorage.clear();
-  
-//}
+
+}
+
+function SaveElements() {
+    if (document.getElementById("cProduto").value) {
+        window.localStorage.setItem("Nome", document.getElementById("cProduto").value);
+    }
+    if (document.getElementById("dropCategoria").value) {
+        window.localStorage.setItem("Categoria", document.getElementById("dropCategoria").value);
+    }
+
+    if (document.getElementById("dropCor").value) {
+        window.localStorage.setItem("Cor", document.getElementById("dropCor").value);
+
+    }
+
+    if (document.getElementById("dropMarca").value) {
+        window.localStorage.setItem("Marca", document.getElementById("dropMarca").value);
+    }
+
+    if (document.getElementById("dropEstilo").value) {
+        window.localStorage.setItem("Estilo", document.getElementById("dropEstilo").value);
+
+    }
+
+    if (document.getElementById("dropTamanho").value) {
+        window.localStorage.setItem("Tamanho", documento.getElementById("dropTamanho").value);
+
+    }
+}
+
+function toCleanStorage() {
+    window.localStorage.clear();
+
+}
 
 
 $("#adicionarCarrinho").click(function () {
@@ -53,6 +81,11 @@ $("#adicionarCarrinho").click(function () {
     }
     else {
         console.log("ok");
+        alert("Ok");
     }
 });
+
+function ComprarAgora() {
+    Alert("Comprado");
+}
 
