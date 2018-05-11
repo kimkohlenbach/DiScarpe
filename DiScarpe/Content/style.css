@@ -97,7 +97,7 @@ body {
 
 
 .dropdown {
-    padding: 10px;
+    padding-left: 15px;
     position: relative;
     display: inline-block;
     color: white;
@@ -105,6 +105,7 @@ body {
 
 .menu {
     margin-top: 4px;
+    padding: 15px 10px 10px;
 }
 
 .dropbtn {
@@ -157,7 +158,7 @@ body {
     border: 0px solid #e7e7e7;
     padding: .5rem;
     transition: 1s;
-    height: 400px;
+    height: 450px;
 }
 
     .card:hover {
@@ -188,13 +189,18 @@ body {
         color: black;
     }
 
-.preco {
+.valorProduto {
     font-weight: 700;
+    font-size: 20px;
 }
 
 
 #btnCard {
     width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 30px;
 }
 
     #btnCard a {
@@ -307,10 +313,10 @@ body {
 
 /* ------------- RODAPÉ------------- */
 footer {
+    height: 250px;
     font-family: 'Barlow Condensed', sans-serif;
     background-color: #333333;
     color: white;
-    padding-top: -150px;
     margin-bottom: -50px;
-    bottom: 0;
+    bottom: 0px;
 }
