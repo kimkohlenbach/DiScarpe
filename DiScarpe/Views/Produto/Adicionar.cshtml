@@ -20,7 +20,7 @@
     HttpCookie userIdCookie = new HttpCookie("UserID");
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
+    <div class="form-horizontal" onload="RecoveryData()">
         <p class="paginaTitulo">Adicionar novo Produto</p>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -59,7 +59,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IdMarca, "Marca", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("IdMarca", (IEnumerable<SelectListItem>)ViewBag.marca, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("IdMarca", (IEnumerable<SelectListItem>)ViewBag.marca, htmlAttributes: new { @class = "form-control", id="dropMarca"})
                 @Html.ValidationMessageFor(model => model.IdMarca, "", new { @class = "text-danger" })
                 @Html.ActionLink("Adicionar", "AdicionarMarca", "Produto", new { id="adMarca", onClick = "SaveElements()" })
             </div>
@@ -69,7 +69,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IdEstilo, "Estilo", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("IdEstilo", (IEnumerable<SelectListItem>)ViewBag.estilo, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("IdEstilo", (IEnumerable<SelectListItem>)ViewBag.estilo, htmlAttributes: new { @class = "form-control", id="dropEstilo"})
                 @Html.ValidationMessageFor(model => model.IdEstilo, "", new { @class = "text-danger" })
                 @Html.ActionLink("Adicionar", "AdicionarEstilo", "Produto", new { id="adEstilo", onClick = "SaveElements()" })
             </div>
@@ -79,7 +79,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IdTamanho, "Tamanho", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("IdTamanho", (IEnumerable<SelectListItem>)ViewBag.tamanho, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("IdTamanho", (IEnumerable<SelectListItem>)ViewBag.tamanho, htmlAttributes: new { @class = "form-control", id="dropTamanho" })
                 @Html.ValidationMessageFor(model => model.IdTamanho, "", new { @class = "text-danger" })
                 @Html.ActionLink("Adicionar", "AdicionarTamanho", "Produto", new { id = "adTamanho", onClick = "SaveElements()" })
             </div>

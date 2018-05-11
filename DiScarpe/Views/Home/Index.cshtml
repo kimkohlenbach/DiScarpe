@@ -17,7 +17,7 @@ else
                 <div class="card-body">
                     <h5 class="card-title">@Html.ActionLink(item.Nome, "Detalhes", "Produto", new { @produtoId = item.IdProduto, }, null)</h5>
                     <p class="valorProduto">R$ @Convert.ToDecimal(item.Preco)</p>
-                    <button class="btn btn-success" id="btnCard">@Html.ActionLink("Comprar", "Detalhes", "Produto", new { @produtoId = item.IdProduto, }, null)</button>
+                    <button class="btn btn-success" id="btnCard">@Html.ActionLink("Comprar", "Detalhes", "Produto", new { @produtoId = item.IdProduto, })</button>
                 </div>
             </div>
         }
