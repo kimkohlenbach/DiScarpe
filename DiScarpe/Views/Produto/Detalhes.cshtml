@@ -28,7 +28,7 @@
         <div class="botoes">
             <div class="row">
                 <div class="col-md-4">
-                    <a id="comprarProduto" href="~/Home/Carrinho" class="btn btn-success">Comprar</a>
+                    <a id="comprarProduto" href="~/Cliente/Carrinho" class="btn btn-success" onclick="addCart(@Model.IdProduto, @Session["IdUsuario"])">Comprar</a>
                 </div>
                 <div class="col-md-4">
                     <button id="adicionarFavoritos" type="button" class="btn btn-light" data-toggle="tooltip" data-placement="top" title="Adicionar a Lista de Desejos"><i class="fas fa-heart"></i></button>

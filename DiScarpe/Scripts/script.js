@@ -102,3 +102,8 @@ function addCart(idProduto, idUsuario) {
 
     
 }
+
+function myCart() {
+
+    return JSON.parse(window.sessionStorage.getItem("ProdutoUsuario"));
+}
