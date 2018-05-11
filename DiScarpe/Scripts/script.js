@@ -4,10 +4,13 @@ $(document).ready(function () {
         $(this).addClass("active");
     });
 
+    if (document.getElementById("cProduto")) {
+        RecoveryData();
+    }
 })
 
 function RecoveryData() {
-
+   
     if (window.localStorage.getItem("Nome")) {
         document.getElementById("cProduto").value = window.localStorage.getItem("Nome");
     }

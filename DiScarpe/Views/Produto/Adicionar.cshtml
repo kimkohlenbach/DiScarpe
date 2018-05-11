@@ -20,7 +20,7 @@
     HttpCookie userIdCookie = new HttpCookie("UserID");
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal" onload="RecoveryData()">
+    <div class="form-horizontal">
         <p class="paginaTitulo">Adicionar novo Produto</p>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
