@@ -13,7 +13,7 @@
     //}
 
 }
-<a href="~/"><i id="voltarPagina" class="fas fa-arrow-left"></i></a>
+<a href="~/Home/Administracao"><i id="voltarPagina" class="fas fa-arrow-left"></i></a>
 
 @using (Html.BeginForm())
 {
@@ -30,6 +30,23 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", id = "cProduto" } })
                 @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control", id = "DescricaoProduto" } })
+                @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Preco, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Preco, new { htmlAttributes = new { @class = "form-control", id = "PrecoProduto" } })
+                <p>Exemplo: 109,90</p>
+                @Html.ValidationMessageFor(model => model.Preco, "", new { @class = "text-danger" })
             </div>
         </div>
 

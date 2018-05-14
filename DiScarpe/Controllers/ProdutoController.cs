@@ -113,8 +113,9 @@ namespace DiScarpe.Controllers
             db.Produto.Add(P);
             db.SaveChanges();
             ViewBag.Status = "ok";
-            return RedirectToAction("Adicionar","Produto");
+            return RedirectToAction("Administracao","Home");
         }
+
         public ActionResult AdicionarMarca()
         {
            
@@ -137,6 +138,7 @@ namespace DiScarpe.Controllers
 
             return View();
         }
+
         [HttpPost]
         public ActionResult AdicionarCor(Cor cor)
         {
@@ -153,6 +155,7 @@ namespace DiScarpe.Controllers
 
             return View();
         }
+
         [HttpPost]
         public ActionResult AdicionarEstilo(Estilo estilo)
         {
@@ -163,11 +166,13 @@ namespace DiScarpe.Controllers
             ViewBag.mensagem = "Acesso Negado";
             return RedirectToAction("Adicionar", "Produto");
         }
+
         public ActionResult AdicionarTamanho()
         {
 
             return View();
         }
+
         [HttpPost]
         public ActionResult AdicionarTamanho(Tamanho tamanho)
         {
@@ -178,17 +183,12 @@ namespace DiScarpe.Controllers
             ViewBag.mensagem = "Acesso Negado";
             return RedirectToAction("Adicionar", "Produto");
         }
-
-       
-
+        
         public ActionResult Categoria()
         {
             return View();
         }
-
-
-      
-
+        
         [HttpPost]
         public ActionResult Categoria(Categoria C)
         {
