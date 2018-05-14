@@ -71,7 +71,7 @@ namespace DiScarpe.Controllers
                         Session["Email"] = info.Email;
                         Session["Nome"] = info.Nome;
                         Session["Administrador"] = info.Administrador;
-                        return RedirectToAction("Administracao", "Home");
+                        return RedirectToAction("Painel", "Produto");
                       
                     }
                     else
@@ -84,17 +84,6 @@ namespace DiScarpe.Controllers
                     }
                 }
             }
-        }
-
-        public ActionResult Administracao()
-        {
-            int IdUsuario = (int)Session["IdUsuario"];
-            var model = from c in db.Produto
-                        orderby c.IdUsuario
-                        where c.IdUsuario == IdUsuario
-                        select c;
-
-            return View(model);
         }
 
         public ActionResult LogOut()
