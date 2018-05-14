@@ -58,6 +58,16 @@ body {
         color: white;
     }
 
+.excluir {
+    text-transform: uppercase;
+    color: white;
+}
+
+    .excluir:hover {
+        text-transform: uppercase;
+        color: white;
+    }
+
 .control-label {
     font-size: 18px;
 }
