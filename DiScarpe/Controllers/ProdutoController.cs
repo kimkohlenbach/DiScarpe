@@ -244,6 +244,23 @@ namespace DiScarpe.Controllers
         }
 
 
+        public ActionResult AdicionarCarrinho(Produto p)
+        {
+            if (Session["IdUsuario"]!=null)
+            {
+                if (Session["compras"] != null)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+            return Content("Produto adicionado" + Session["carrinhoUsuario"]);
+        }
+
+
 
     }
 }
