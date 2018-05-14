@@ -4,21 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4b660c7394064a3e93d802a184c847ef" Name="Diagram1">
+      <Diagram DiagramId="63f1d60a03804b5f93a7fd2e61e0f113" Name="Diagram1">
         <EntityTypeShape EntityType="DiScarpeDBModels.Carrinho" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DiScarpeDBModels.Categoria" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DiScarpeDBModels.Cor" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DiScarpeDBModels.Estilo" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DiScarpeDBModels.Favorito" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DiScarpeDBModels.Marca" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiScarpeDBModels.Categoria" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiScarpeDBModels.Cor" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiScarpeDBModels.Estilo" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiScarpeDBModels.Favorito" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiScarpeDBModels.Marca" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DiScarpeDBModels.Produto" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="DiScarpeDBModels.sysdiagrams" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DiScarpeDBModels.Tamanho" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DiScarpeDBModels.Usuario" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiScarpeDBModels.sysdiagrams" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiScarpeDBModels.Tamanho" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiScarpeDBModels.Usuario" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
         <AssociationConnector Association="DiScarpeDBModels.FK_Categoria" ManuallyRouted="false" />
         <AssociationConnector Association="DiScarpeDBModels.FK_Cor" ManuallyRouted="false" />
         <AssociationConnector Association="DiScarpeDBModels.FK_Estilo" ManuallyRouted="false" />
         <AssociationConnector Association="DiScarpeDBModels.FK_Marca" ManuallyRouted="false" />
+        <AssociationConnector Association="DiScarpeDBModels.FK_Produto_Usuario" ManuallyRouted="false" />
         <AssociationConnector Association="DiScarpeDBModels.FK_Tamanho" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

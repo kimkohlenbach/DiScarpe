@@ -62,6 +62,7 @@
           <Property Name="IdTamanho" Type="int" Nullable="false" />
           <Property Name="Descricao" Type="varchar" MaxLength="300" />
           <Property Name="Preco" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -138,6 +139,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Produto_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Produto">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Tamanho">
           <End Role="Tamanho" Type="Self.Tamanho" Multiplicity="1" />
           <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
@@ -175,6 +188,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_Marca" Association="Self.FK_Marca">
             <End Role="Marca" EntitySet="Marca" />
+            <End Role="Produto" EntitySet="Produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produto_Usuario" Association="Self.FK_Produto_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Produto" EntitySet="Produto" />
           </AssociationSet>
           <AssociationSet Name="FK_Tamanho" Association="Self.FK_Tamanho">
@@ -248,10 +265,12 @@
           <Property Name="IdTamanho" Type="Int32" Nullable="false" />
           <Property Name="Descricao" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="Preco" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Categoria" Relationship="Self.FK_Categoria" FromRole="Produto" ToRole="Categoria" />
           <NavigationProperty Name="Cor" Relationship="Self.FK_Cor" FromRole="Produto" ToRole="Cor" />
           <NavigationProperty Name="Estilo" Relationship="Self.FK_Estilo" FromRole="Produto" ToRole="Estilo" />
           <NavigationProperty Name="Marca" Relationship="Self.FK_Marca" FromRole="Produto" ToRole="Marca" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Produto_Usuario" FromRole="Produto" ToRole="Usuario" />
           <NavigationProperty Name="Tamanho" Relationship="Self.FK_Tamanho" FromRole="Produto" ToRole="Tamanho" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -281,6 +300,7 @@
           <Property Name="Email" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Senha" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Administrador" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Produto" Relationship="Self.FK_Produto_Usuario" FromRole="Usuario" ToRole="Produto" />
         </EntityType>
         <Association Name="FK_Categoria">
           <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
@@ -330,6 +350,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Produto_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="Produto">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Tamanho">
           <End Role="Tamanho" Type="Self.Tamanho" Multiplicity="1" />
           <End Role="Produto" Type="Self.Produto" Multiplicity="*" />
@@ -367,6 +399,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_Marca" Association="Self.FK_Marca">
             <End Role="Marca" EntitySet="Marca" />
+            <End Role="Produto" EntitySet="Produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Produto_Usuario" Association="Self.FK_Produto_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Produto" EntitySet="Produto" />
           </AssociationSet>
           <AssociationSet Name="FK_Tamanho" Association="Self.FK_Tamanho">
@@ -442,6 +478,7 @@
                 <ScalarProperty Name="IdTamanho" ColumnName="IdTamanho" />
                 <ScalarProperty Name="Descricao" ColumnName="Descricao" />
                 <ScalarProperty Name="Preco" ColumnName="Preco" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

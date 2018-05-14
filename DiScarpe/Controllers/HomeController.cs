@@ -88,8 +88,10 @@ namespace DiScarpe.Controllers
 
         public ActionResult Administracao()
         {
+            int IdUsuario = (int)Session["IdUsuario"];
             var model = from c in db.Produto
-                        orderby c.IdProduto
+                        orderby c.IdUsuario
+                        where c.IdUsuario == IdUsuario
                         select c;
 
             return View(model);

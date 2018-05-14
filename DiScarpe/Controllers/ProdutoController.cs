@@ -108,6 +108,8 @@ namespace DiScarpe.Controllers
         public ActionResult Adicionar(Produto P)
         {
             DiScarpeDBEntities db = new DiScarpeDBEntities();
+            int IdUsuario = (int)Session["IdUsuario"];
+            P.IdUsuario = IdUsuario;
             db.Produto.Add(P);
             db.SaveChanges();
             ViewBag.Status = "ok";

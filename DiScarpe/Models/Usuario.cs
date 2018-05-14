@@ -16,6 +16,12 @@ namespace DiScarpe.Models
 
     public partial class Usuario
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Usuario()
+        {
+            this.Produto = new HashSet<Produto>();
+        }
+
         public int IdUsuario { get; set; }
         [DisplayName("Nome")]
         [Required(ErrorMessage = "Este campo dever ser preenchido.")]
@@ -28,5 +34,8 @@ namespace DiScarpe.Models
         public string Senha { get; set; }
         public string LoginErrorMessage { get; internal set; }
         public bool Administrador { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Produto> Produto { get; set; }
     }
 }

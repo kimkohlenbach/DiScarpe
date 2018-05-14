@@ -18,6 +18,9 @@
 <table class="table">
     <tr>
         <th>
+            <p class="texto">IdUsuario</p>
+        </th>
+        <th>
             <p class="texto">Nome</p>
         </th>
         <th>
@@ -47,6 +50,9 @@
 @foreach (var item in Model) {
 
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdUsuario)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Nome)
         </td>

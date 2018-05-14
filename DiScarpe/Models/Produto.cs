@@ -23,11 +23,13 @@ namespace DiScarpe.Models
         public int IdTamanho { get; set; }
         public string Descricao { get; set; }
         public decimal Preco { get; set; }
+        public int IdUsuario { get; set; }
     
         public virtual Categoria Categoria { get; set; }
         public virtual Cor Cor { get; set; }
         public virtual Estilo Estilo { get; set; }
         public virtual Marca Marca { get; set; }
+        public virtual Usuario Usuario { get; set; }
         public virtual Tamanho Tamanho { get; set; }
     }
 }
