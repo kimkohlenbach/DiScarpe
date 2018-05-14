@@ -243,6 +243,22 @@ namespace DiScarpe.Controllers
             return View(produto);
         }
 
+        [HttpPost]
+        public string Excluir(long id)
+        {
+            try
+            {
+                Produto produto = db.Produto.Find(id);
+                db.Produto.Remove(produto);
+                db.SaveChanges();
+                return Boolean.TrueString;
+            }
+            catch
+            {
+                return Boolean.FalseString;
+            }
+        }
+
 
         public ActionResult AdicionarCarrinho(Produto p)
         {
@@ -259,8 +275,6 @@ namespace DiScarpe.Controllers
             }
             return Content("Produto adicionado" + Session["carrinhoUsuario"]);
         }
-
-
 
     }
 }

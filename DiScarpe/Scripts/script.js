@@ -111,3 +111,27 @@ function myCart() {
 }
 
 
+$(function () {
+    var linhaAtual;
+    $(".excluir").on("click", function () {
+        if (confirm("Tem certeza que deseja excluir o produto?")) {
+            var urlExclusao = $(this).attr("href");
+            linhaAtual = $(this).closest("tr");
+
+            $.ajax({
+                url: urlExclusao,
+                type: "POST"
+            }).done(function (excluiu) {
+                if (excluiu) {
+                    linhaAtual.remove();
+                } else {
+                    alert("Ocorreu algum problema na exclusão do produto.");
+                }
+            }).fail(function () {
+                alert("Ocorreu algum erro :(");
+            });
+        }
+        return false;
+    });
+});
+
