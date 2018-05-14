@@ -1,6 +1,7 @@
 ﻿using DiScarpe.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,6 +16,18 @@ namespace DiScarpe.Controllers
         {
             return View(db.Produto.FirstOrDefault(x => x.IdProduto == produtoId));
         }
+
+        public ActionResult Painel()
+        {
+            int IdUsuario = (int)Session["IdUsuario"];
+            var model = from c in db.Produto
+                        orderby c.IdUsuario
+                        where c.IdUsuario == IdUsuario
+                        select c;
+
+            return View(model);
+        }
+
 
         // GET: CadastroProduto
         public ActionResult Adicionar()
@@ -119,7 +132,7 @@ namespace DiScarpe.Controllers
         public ActionResult AdicionarMarca()
         {
            
-           return View();//retorna view velha
+           return View();
         }
 
         [HttpPost]
@@ -199,5 +212,38 @@ namespace DiScarpe.Controllers
             ViewBag.mensagem = "Acesso Negado";
             return RedirectToAction("Adicionar", "Produto");
         }
+
+
+        public ActionResult Editar(long id)
+        {
+            Produto produto = db.Produto.Find(id);
+            ViewBag.IdCategoria = new SelectList(db.Categoria, "IdCategoria", "Descricao", produto.IdCategoria);
+            ViewBag.IdMarca = new SelectList(db.Marca, "IdMarca", "Descricao", produto.IdMarca);
+            ViewBag.IdCor = new SelectList(db.Cor, "IdCor", "Descricao", produto.IdCor);
+            ViewBag.IdEstilo = new SelectList(db.Estilo, "IdEstilo", "Descricao", produto.IdEstilo);
+            ViewBag.IdTamanho = new SelectList(db.Tamanho, "IdTamanho", "Descricao", produto.IdTamanho);
+            ViewBag.IdUsuario = new SelectList(db.Usuario, "IdUsuario", "IdUsuario", produto.IdUsuario);
+            return View(produto);
+        }
+
+        [HttpPost]
+        public ActionResult Editar(Produto produto)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(produto).State = EntityState.Modified; db.SaveChanges();
+                return RedirectToAction("Painel", "Produto");
+            }
+            ViewBag.IdCategoria = new SelectList(db.Categoria, "IdCategoria", "Categoria", produto.IdCategoria);
+            ViewBag.IdMarca = new SelectList(db.Marca, "IdMarca", "Descricao", produto.IdMarca);
+            ViewBag.IdCor = new SelectList(db.Cor, "IdCor", "Cor", produto.IdCor);
+            ViewBag.IdEstilo = new SelectList(db.Estilo, "IdEstilo", "Estilo", produto.IdEstilo);
+            ViewBag.IdTamanho = new SelectList(db.Tamanho, "IdTamanho", "Tamanho", produto.IdTamanho);
+            ViewBag.IdUsuario = new SelectList(db.Usuario, "IdUsuario", "IdUsuario", produto.IdUsuario);
+            return View(produto);
+        }
+
+
+
     }
 }
