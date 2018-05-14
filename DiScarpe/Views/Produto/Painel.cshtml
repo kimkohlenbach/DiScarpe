@@ -18,9 +18,6 @@
 <table class="table">
     <tr>
         <th>
-            <p class="texto">IdUsuario</p>
-        </th>
-        <th>
             <p class="texto">Nome</p>
         </th>
         <th>
@@ -51,9 +48,6 @@
 
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.IdUsuario)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
         <td>
@@ -79,7 +73,7 @@
         </td>
         <td>
             @Html.ActionLink("Editar", "Editar", new { id=item.IdProduto })
-            @Html.ActionLink("Excluir", "Excluir", new { id=item.IdProduto})
+            @Html.ActionLink("Excluir", "Excluir", new { id = item.IdProduto }, new { @class = "excluir" })
         </td>
     </tr>
 }
