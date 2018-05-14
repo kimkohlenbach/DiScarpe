@@ -107,3 +107,6 @@ function myCart() {
 
     return JSON.parse(window.sessionStorage.getItem("ProdutoUsuario"));
 }
+
+
+

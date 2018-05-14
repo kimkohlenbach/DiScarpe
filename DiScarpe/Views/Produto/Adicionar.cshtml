@@ -13,7 +13,6 @@
     //}
 
 }
-<a href="@Url.Action("LogOut","Home")">Sair</a>
 <a href="~/"><i id="voltarPagina" class="fas fa-arrow-left"></i></a>
 
 @using (Html.BeginForm())
@@ -28,7 +27,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", id="cProduto" } })
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", id = "cProduto" } })
                 @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -36,9 +35,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IdCategoria, "Categoria", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("IdCategoria", (IEnumerable<SelectListItem>)ViewBag.cat, htmlAttributes: new { @class = "form-control", id="dropCategoria" })
+                @Html.DropDownList("IdCategoria", (IEnumerable<SelectListItem>)ViewBag.cat, htmlAttributes: new { @class = "form-control", id = "dropCategoria" })
                 @Html.ValidationMessageFor(model => model.IdCategoria, "", new { @class = "text-danger" })
-                @Html.ActionLink("Adicionar", "Categoria", "Produto", new { id="adCategoria",  onClick="SaveElements()" })
+                @Html.ActionLink("Adicionar", "Categoria", "Produto", new { id = "adCategoria", onClick = "SaveElements()" })
             </div>
         </div>
 
@@ -54,25 +53,25 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IdMarca, "Marca", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("IdMarca", (IEnumerable<SelectListItem>)ViewBag.marca, htmlAttributes: new { @class = "form-control", id="dropMarca"})
+                @Html.DropDownList("IdMarca", (IEnumerable<SelectListItem>)ViewBag.marca, htmlAttributes: new { @class = "form-control", id = "dropMarca" })
                 @Html.ValidationMessageFor(model => model.IdMarca, "", new { @class = "text-danger" })
-                @Html.ActionLink("Adicionar", "AdicionarMarca", "Produto", new { id="adMarca", onClick = "SaveElements()" })
+                @Html.ActionLink("Adicionar", "AdicionarMarca", "Produto", new { id = "adMarca", onClick = "SaveElements()" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.IdEstilo, "Estilo", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("IdEstilo", (IEnumerable<SelectListItem>)ViewBag.estilo, htmlAttributes: new { @class = "form-control", id="dropEstilo"})
+                @Html.DropDownList("IdEstilo", (IEnumerable<SelectListItem>)ViewBag.estilo, htmlAttributes: new { @class = "form-control", id = "dropEstilo" })
                 @Html.ValidationMessageFor(model => model.IdEstilo, "", new { @class = "text-danger" })
-                @Html.ActionLink("Adicionar", "AdicionarEstilo", "Produto", new { id="adEstilo", onClick = "SaveElements()" })
+                @Html.ActionLink("Adicionar", "AdicionarEstilo", "Produto", new { id = "adEstilo", onClick = "SaveElements()" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.IdTamanho, "Tamanho", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("IdTamanho", (IEnumerable<SelectListItem>)ViewBag.tamanho, htmlAttributes: new { @class = "form-control", id="dropTamanho" })
+                @Html.DropDownList("IdTamanho", (IEnumerable<SelectListItem>)ViewBag.tamanho, htmlAttributes: new { @class = "form-control", id = "dropTamanho" })
                 @Html.ValidationMessageFor(model => model.IdTamanho, "", new { @class = "text-danger" })
                 @Html.ActionLink("Adicionar", "AdicionarTamanho", "Produto", new { id = "adTamanho", onClick = "SaveElements()" })
             </div>
@@ -80,13 +79,13 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cadastrar" class="btn btn-default" id="salvaProduto"  onClick="toCleanStorage()" />
+                <input type="submit" value="Cadastrar" class="btn btn-success" id="salvaProduto" onClick="toCleanStorage()" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Cancelar", "Adicionar","Produto", new { id="cancelar", onClick="toCleanStorage()"})
+    @Html.ActionLink("Cancelar", "Adicionar", "Produto", new { id = "cancelar", onClick = "toCleanStorage()", @class = "btn btn-danger" })
 </div>
 

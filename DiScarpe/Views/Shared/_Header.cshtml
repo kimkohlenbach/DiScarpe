@@ -43,11 +43,16 @@
                 <a class="nav-login" href="~/Cliente/ListaDesejos" title="Lista de Desejos"><i class="fas fa-heart"></i></a>
             </div>
             <div class="dropdown">
-                <a class="nav-login" href="~/Cliente/Carrinho" title="Carrinho de Compras"><i class="fas fa-shopping-cart" ></i></a>
+                <a class="nav-login" href="~/Cliente/Carrinho" title="Carrinho de Compras"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <div class="dropdown">
+                <a class="nav-login" href="~/Home/Login">Login</a>
             </div>
             <div class="dropdown">
                 <p id="nomeUsuario">@Session["Nome"]</p>
-                <a class="nav-login" href="~/Home/Login">Login</a>
+            </div>
+            <div class="dropdown">
+                <a href="@Url.Action("LogOut","Home", new { @class = "nav-login" })">Sair</a>
             </div>
         </div>
     </div>

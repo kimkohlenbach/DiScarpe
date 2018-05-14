@@ -62,9 +62,11 @@ body {
     font-size: 18px;
 }
 
+#linkSair {
+    display: none;
+}
 
 /*DETALHES*/
-
 .subtitulo {
     font-size: 18px;
     font-weight: 700;

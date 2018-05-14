@@ -48,7 +48,6 @@ namespace DiScarpe.Controllers
 
         public ActionResult Login()
         {
-
             return View();
         }
 
