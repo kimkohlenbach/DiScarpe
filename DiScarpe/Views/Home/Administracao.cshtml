@@ -1,5 +1,10 @@
 ﻿@model IEnumerable<DiScarpe.Models.Produto>
-
+@{
+    if (Session["IdUsuario"] == null)
+    {
+        Response.Redirect("~/Home/Login");
+    }
+}
 <p class="paginaTitulo">Painel Administrativo</p>
 <br />
 <div class="row" id="painelAdmin">
@@ -39,7 +44,7 @@
         <th></th>
     </tr>
 
-@*@foreach (var item in Model) {
+@foreach (var item in Model) {
 
     <tr>
         <td>
@@ -64,14 +69,13 @@
             @Html.DisplayFor(modelItem => item.Marca.Descricao)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Tamanho.IdTamanho)
+            @Html.DisplayFor(modelItem => item.Tamanho.Descricao)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdProduto }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdProduto }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdProduto })
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdProduto })
+            @Html.ActionLink("Excluir", "Delete", new { id=item.IdProduto })
         </td>
     </tr>
-}*@
+}
 
 </table>

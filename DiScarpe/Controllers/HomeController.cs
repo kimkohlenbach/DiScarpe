@@ -88,7 +88,11 @@ namespace DiScarpe.Controllers
 
         public ActionResult Administracao()
         {
-                return View();
+            var model = from c in db.Produto
+                        orderby c.IdProduto
+                        select c;
+
+            return View(model);
         }
 
         public ActionResult LogOut()
