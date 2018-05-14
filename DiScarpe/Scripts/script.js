@@ -3,12 +3,14 @@ $(document).ready(function () {
         $('.nTamanho.active').removeClass("active"); //aqui removemos a class do item anteriormente clicado para que possamos adicionar ao item clicado
         $(this).addClass("active"); //aqui adicionamos a class ao item clicado
     });
-
+   
     if (document.getElementById("cProduto")) {
         RecoveryData();
+     
     }
-
 });
+
+
 function RecoveryData() {
 
     if (window.localStorage.getItem("Nome")) {
@@ -88,16 +90,16 @@ function ComprarAgora() {
 function addCart(idProduto, idUsuario) {
     var Armazenado;
     var Produto = [];
-    window.sessionStorage.setItem("Usuario", idUsuario);
+  
     if (!window.sessionStorage.getItem("ProdutoUsuario")) {
 
-        window.sessionStorage.setItem("ProdutoUsuario", JSON.stringify(idProduto));
+        window.sessionStorage.setItem("ProdutoUsuario", idProduto);
     }
     else {
-        Armazenado = JSON.parse(window.sessionStorage.getItem("ProdutoUsuario"));
+        Armazenado = (window.sessionStorage.getItem("ProdutoUsuario"));
         Produto.push(Armazenado);
         Produto.push(idProduto);
-        window.sessionStorage.setItem("ProdutoUsuario", JSON.stringify(Produto));
+        window.sessionStorage.setItem("ProdutoUsuario", Produto);
     }
 
     
@@ -105,7 +107,7 @@ function addCart(idProduto, idUsuario) {
 
 function myCart() {
 
-    return JSON.parse(window.sessionStorage.getItem("ProdutoUsuario"));
+    return (window.sessionStorage.getItem("ProdutoUsuario"));
 }
 
 

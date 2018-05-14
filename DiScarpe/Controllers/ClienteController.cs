@@ -17,5 +17,9 @@ namespace DiScarpe.Controllers
         {
             return View();
         }
+        public ActionResult AdicionarCarrinho()
+        {
+            return Content("Produto adicionado");
+        }
     }
 }
